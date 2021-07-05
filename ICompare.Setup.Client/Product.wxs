@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" >
+
+  <?include $(var.ProjectDir)\Variables.wxi ?>
+
+  <Product Id="*" Name="$(var.PRODUCT)" Language="1033" Version="$(var.VERSION)" Manufacturer="Doorway" UpgradeCode="$(var.UPGRADECODEUID)">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <PropertyRef Id="WIX_IS_NETFRAMEWORK_46_OR_LATER_INSTALLED"/>
+    <Condition Message="This application requires .NET Framework 4.6.1. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR WIX_IS_NETFRAMEWORK_46_OR_LATER_INSTALLED]]>
+    </Condition>
+
+    <!--<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." AllowSameVersionUpgrades="yes" />-->
+    <MajorUpgrade AllowDowngrades="yes" />
+    <Media Id="1" Cabinet="ICompare.cab" EmbedCab="yes" CompressionLevel="high" />
+    <Media Id="2" Cabinet="ICore.cab" EmbedCab="yes" CompressionLevel="high" />
+    <Media Id="3" Cabinet="DILib.cab" EmbedCab="no" CompressionLevel="high" />
+    <Media Id="4" Cabinet="Fluid.cab" EmbedCab="yes" CompressionLevel="high" />
+    <Media Id="5" Cabinet="Fusion.cab" EmbedCab="yes" CompressionLevel="high" />
+    <Media Id="6" Cabinet="Lib.cab" EmbedCab="yes" CompressionLevel="high"/>
+    <Media Id="7" Cabinet="DBTool.cab" EmbedCab="yes" CompressionLevel="high" />
+    <Media Id="8" Cabinet="TestBench.cab" EmbedCab="yes" CompressionLevel="high" />
+    <!--<Media Id="7" Cabinet="Synapse.cab" EmbedCab="yes" CompressionLevel="high"/>-->
+
+    <Feature Id="ProductFeature" Title="ICompare" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="FluidComponents" />
+      <ComponentGroupRef Id="ICompareComponents"/>
+      <ComponentGroupRef Id="LibComponents"/>
+      <ComponentGroupRef Id="FusionComponents"/>
+      <!--<ComponentGroupRef Id="DBToolComponents"/>-->
+    </Feature>
+
+    <WixVariable Id="WixUILicenseRtf" Value="Licence.rtf" />
+
+    <UIRef Id="MyUI" />
+    <Property Id="WIXUI_INSTALLDIR" Value="DOORWAY" />
+
+    <Property Id="ARPPRODUCTICON" Value="iComparefinal.ico" />
+    <Icon Id="iComparefinal.ico" SourceFile="../../ICompare/UI/ICompare.UI.Wpf.Shell/iComparefinal.ico" />
+
+    <WixVariable Id="WixUIBannerBmp" Value="../../ICompare/UI/ICompare.UI.Wpf.Resources/Images/iCompareBanner.png" />
+    <WixVariable Id="WixUIDialogBmp" Value="../../ICompare/UI/ICompare.UI.Wpf.Resources/Images/iCompareUIBanner.png" />
+
+    <Property Id="WixShellExecTarget" Value="[INSTALLFOLDER]ICompare.Setup.ClientPostInstaller.exe" />
+    <CustomAction Id="LaunchApplication"
+        BinaryKey="WixCA"
+        DllEntry="WixShellExec"
+        Impersonate="yes" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+  </Product>
+
+  <Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="$(var.SHORTCUTUID)">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="$(var.PRODUCT)"
+                  Description="iCompare"
+                  Target="[#ICompare.UI.Wpf.Shell]"
+                  WorkingDirectory="INSTALLFOLDER"/>
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+  <Fragment>
+    <!-- Will default to C:\ if that is the main disk-->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <!-- Will reference to C:\inetpub-->
+      <Directory Id="DOORWAY" Name="Doorway">
+        <!-- Will reference to c:\Inetpub\Demowebsite-->
+        <Directory Id="INSTALLFOLDER" Name="$(var.PRODUCT)">
+          <Directory Id="LIBINSTALLFOLDER" Name="lib">
+            <Directory Id="BINFOLDER" Name="bin"/>
+            <Directory Id="COREFOLDER" Name="core"/>
+            <Directory Id="DEVEXPRESSFOLDER" Name="devexpress"/>
+            <Directory Id="ICOMPAREFOLDER" Name="icompare"/>
+            <Directory Id="FLUIDINSTALLFOLDER" Name="fluid"/>
+            <Directory Id="FUSIONINSTALLFOLDER" Name="fusion"/>
+            <!--<Directory Id="DBTOOLINSTALLFOLDER" Name="DBTool"/>-->
+          </Directory>
+
+        </Directory>
+
+      </Directory>
+
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="$(var.PRODUCT)"/>
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+
+      <Component Id='Fluid.UI.Shell' Guid='{1d1502e5-3ee4-4382-b453-d639be6bb853}'>
+        <File Id='Fluid.UI.Shell' Name='Fluid.UI.Shell.exe' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Shell.exe' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Shell.exe.config' Guid='{775C4ACF-2ED0-472C-90E4-CD0E937E3D3E}'>
+        <File Id='Fluid.UI.Shell.exe.config' Name='Fluid.UI.Shell.exe.config' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Shell.exe.config' KeyPath = 'yes' />
+      </Component>
+
+
+
+      <Component Id='ICompare.UI.Wpf.Shell' Guid='43CBCFEB-237F-4447-A6B0-746C3C019E99'>
+        <File Id='ICompare.UI.Wpf.Shell' Name='ICompare.UI.Wpf.Shell.exe' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Shell.exe' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Shell.Config' Guid='516F206B-F85A-4832-95A4-0B51EB0AEBD9'>
+        <File Id='ICompare.UI.Wpf.Shell.Config' Name='ICompare.UI.Wpf.Shell.exe.config' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Shell.exe.config' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Business' Guid='1F4E8F7F-1BDF-45C3-AAD4-C40119E8C431'>
+        <File Id='ICompare.Business' Name='ICompare.Business.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.Business.dll' KeyPath='yes' />
+      </Component>
+
+
+      <Component Id='ICompare.Setup.ClientPostInstaller' Guid='{01CFDE82-A453-44D6-A029-B6732F0FEFC8}'>
+        <File Id='ICompare.Setup.ClientPostInstaller' Name='ICompare.Setup.ClientPostInstaller.exe' DiskId='1' Source='../ICompare.Setup.ClientPostInstaller/bin/Release/ICompare.Setup.ClientPostInstaller.exe' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Setup.ClientPostInstaller.Config' Guid='{C01F0B6F-E11A-4354-A24B-B20C44EF5F6B}'>
+        <File Id='ICompare.Setup.ClientPostInstaller.Config' Name='ICompare.Setup.ClientPostInstaller.exe.config' DiskId='1' Source='../ICompare.Setup.ClientPostInstaller/bin/Release/ICompare.Setup.ClientPostInstaller.exe.config' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Setup.PostInstallerLibrary.dll' Guid='{605E3189-3F01-46DA-8452-7CF9276B0174}'>
+        <File Id='ICompare.Setup.PostInstallerLibrary.dll' Name='ICompare.Setup.PostInstallerLibrary.dll' DiskId='1' Source='../ICompare.Setup.ClientPostInstaller/bin/Release/ICompare.Setup.PostInstallerLibrary.dll' KeyPath='yes' />
+      </Component>
+      
+
+      <Component Id='ICompareCore.Test.DBToolConsole' Guid='{0ABC8FF3-40DF-42FB-B3AD-04D6C4D9FF2E}'>
+        <File Id='ICompareCore.Test.DBToolConsole' Name='ICompareCore.Test.DBToolConsole.exe' DiskId='7' Source='../../ICompareCore/Test/ICompareCore.Test.DBToolConsole/bin/Release/ICompareCore.Test.DBToolConsole.exe' KeyPath = 'yes' />
+      </Component>
+      <Component Id='ICompareCore.Test.DBToolConsole.exe.config' Guid='{0F136015-4B96-453B-898D-DBE10AB17525}'>
+        <File Id='ICompareCore.Test.DBToolConsole.exe.config' Name='ICompareCore.Test.DBToolConsole.exe.config' DiskId='7' Source='../../ICompareCore/Test/ICompareCore.Test.DBToolConsole/bin/Release/ICompareCore.Test.DBToolConsole.exe.config' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='ICompareCore.Test.TestBench' Guid='{3326DCEC-CD94-4071-A11C-B20FE31BA074}'>
+        <File Id='ICompareCore.Test.TestBench' Name='ICompareCore.Test.TestBench.exe' DiskId='7' Source='../../ICompareCore/Test/ICompareCore.Test.TestBench/bin/Release/ICompareCore.Test.TestBench.exe' KeyPath = 'yes' />
+      </Component>
+      <Component Id='ICompareCore.Test.TestBench.exe.config' Guid='{20FB34A7-AAD6-461E-9686-E84ADDDBAD0B}'>
+        <File Id='ICompareCore.Test.TestBench.exe.config' Name='ICompareCore.Test.TestBench.exe.config' DiskId='7' Source='../../ICompareCore/Test/ICompareCore.Test.TestBench/bin/Release/ICompareCore.Test.TestBench.exe.config' KeyPath = 'yes' />
+      </Component>
+
+    </ComponentGroup>
+  </Fragment>
+
+</Wix>

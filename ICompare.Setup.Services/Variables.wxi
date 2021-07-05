@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <?define MAINEXE=$(var.ICompare.Business.MatchingService.TargetFileName)?>
+  <?define VERSION=!(bind.FileVersion.$(var.MAINEXE))?>
+  <?define ALLOCATIONSERVICEUID="{E9447598-EBC2-40F5-A41E-0775B74BC792}"?>
+  <?define MATCHINGSERVICEUID="{06A101EA-AF7D-48ED-8966-8D7446E4093C}"?>
+  <?define IMPORTSERVICEUID="{B73BBF87-7521-4060-9448-204683CA6DE9}"?>
+  <?define SCHEDULERSERVICEUID="{19EA84E0-8F00-47C8-A0E2-6381F8DD5618}"?>
+  <?define VALIDATIONSERVICEUID="{379F9B40-28BC-4B34-9FE1-38EDD24AA21C}"?>
+  <?define UPGRADECODEUID="{F51620F3-0F9D-41FB-8235-EA2D84EE047C}"?>
+  <?define MATCHINGSERVICENAME="icomparematcher $(var.VERSION)" ?>
+  <?define MATCHINGSERVICEDESCRIPTION="iCompare Matching Service $(var.VERSION)" ?>
+  <?define SCHEDULERSERVICENAME=icompareimporter $(var.VERSION)" ?>
+  <?define SCHEDULERSERVICEDESCRIPTION="iCompare Scheduler Service $(var.VERSION)" ?>
+  <?define VALIDATIONSERVICENAME=icomparevalidator $(var.VERSION)" ?>
+  <?define VALIDATIONSERVICEDESCRIPTION="iCompare Validation Service $(var.VERSION)" ?>
+  <?define ALLOCATIONSERVICENAME="icompareallocations $(var.VERSION)"?>
+  <?define ALLOCATIONSERVICEDESCRIPTION="iCompare Allocation Service $(var.VERSION)"?>
+  <?define IMPORTSERVICENAME=icompareimporter $(var.VERSION)" ?>
+  <?define IMPORTSERVICEDESCRIPTION="iCompare Import Service $(var.VERSION)" ?>
+  <?define PRODUCTTITLE="iCompare Services $(var.VERSION)" ?>
+  <?define PRODUCT="iCompare Services"?>
+</Include>

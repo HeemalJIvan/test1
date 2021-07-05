@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+
+  <?include $(var.ProjectDir)\Variables.wxi ?>
+
+  <Product Id="*" Name="iCompare Allocation Service PRU $(var.VERSION)" Language="1033" Version="$(var.VERSION)" Manufacturer="Doorway" UpgradeCode="$(var.UPGRADECODEUID)">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <PropertyRef Id="NETFRAMEWORK40FULL"/>
+    <Condition Message="This application requires .NET Framework 4.0. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR NETFRAMEWORK40FULL]]>
+    </Condition>
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." AllowSameVersionUpgrades="yes" />
+    <Media Id="1" Cabinet="AllocationService.cab" EmbedCab="yes" />
+
+    <Feature Id="ProductFeature" Title="iCompare Allocation Service v$(var.VERSION)" Level="1">
+      <ComponentGroupRef Id="AllocationProductComponents" />
+    </Feature>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="APPLICATIONFOLDER" />
+    <UIRef Id="WixUI_InstallDir"/>
+
+    <Property Id="ARPPRODUCTICON" Value="iComparefinal.ico" />
+    <Icon Id="iComparefinal.ico" SourceFile="../../ICompare/UI/ICompare.UI.Wpf.Shell/iComparefinal.ico" />
+
+    <WixVariable Id="WixUILicenseRtf" Value="Licence.rtf" />
+
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="DOORWAY" Name="Doorway">
+        <Directory Id="APPLICATIONFOLDER" Name="iCompare Allocation Service $(var.VERSION)">
+          <Directory Id="AllocationServiceFolder" Name="Allocation Service" />
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Property Id="ApplicationFolderName" Value="Doorway" />
+    <Property Id="WixAppFolder" Value="WixPerMachineFolder" />
+
+  </Fragment>
+
+</Wix>

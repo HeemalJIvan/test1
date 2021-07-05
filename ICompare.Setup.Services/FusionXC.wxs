@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <ComponentGroup Id="FusionComponents" Directory="FUSIONINSTALLFOLDER">
+      <Component Id='FusionXC.Business.dll' Guid='d4613c12-0939-4983-bf2f-d922ac6533ae'>
+        <File Id='FusionXC.Business.dll' Name='FusionXC.Business.dll' DiskId='4' Source='../../Lib/FusionXC.Business.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.Calculator.dll' Guid='0a651d84-37a5-4ea9-9b12-a06f942429e3'>
+        <File Id='FusionXC.Data.Calculator.dll' Name='FusionXC.Data.Calculator.dll' DiskId='4' Source='../../Lib/FusionXC.Data.Calculator.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.DBGenerator.dll' Guid='262120ba-b057-407b-894c-d042545c7a56'>
+        <File Id='FusionXC.Data.DBGenerator.dll' Name='FusionXC.Data.DBGenerator.dll' DiskId='4' Source='../../Lib/FusionXC.Data.DBGenerator.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.dll' Guid='6634d7f2-8c14-4609-b11e-1b4f3f8b5275'>
+        <File Id='FusionXC.Data.dll' Name='FusionXC.Data.dll' DiskId='4' Source='../../Lib/FusionXC.Data.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.Dynamic.dll' Guid='171b599a-bc38-4674-81cb-de9cdb440d48'>
+        <File Id='FusionXC.Data.Dynamic.dll' Name='FusionXC.Data.Dynamic.dll' DiskId='4' Source='../../Lib/FusionXC.Data.Dynamic.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.Interactive.dll' Guid='15f2992b-0c69-44f5-89e2-c643c0b83357'>
+        <File Id='FusionXC.Data.Interactive.dll' Name='FusionXC.Data.Interactive.dll' DiskId='4' Source='../../Lib/FusionXC.Data.Interactive.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.Math.dll' Guid='152aea36-55cf-4408-a68d-3e937ce1345a'>
+        <File Id='FusionXC.Data.Math.dll' Name='FusionXC.Data.Math.dll' DiskId='4' Source='../../Lib/FusionXC.Data.Math.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.Model.dll' Guid='9ecbdb9b-aaf8-483c-8c4a-714459aec354'>
+        <File Id='FusionXC.Data.Model.dll' Name='FusionXC.Data.Model.dll' DiskId='4' Source='../../Lib/FusionXC.Data.Model.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.Security.dll' Guid='2aec7f65-80ba-4cd6-ac11-4a291cf2e71c'>
+        <File Id='FusionXC.Data.Security.dll' Name='FusionXC.Data.Security.dll' DiskId='4' Source='../../Lib/FusionXC.Data.Security.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.Serialize.dll' Guid='36c9fd6e-da06-4fa7-9d81-f1a688187244'>
+        <File Id='FusionXC.Data.Serialize.dll' Name='FusionXC.Data.Serialize.dll' DiskId='4' Source='../../Lib/FusionXC.Data.Serialize.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.SuperNova2.dll' Guid='5b4c2b61-85a0-4eea-af80-08da73336424'>
+        <File Id='FusionXC.Data.SuperNova2.dll' Name='FusionXC.Data.SuperNova2.dll' DiskId='4' Source='../../Lib/FusionXC.Data.SuperNova2.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.SuperNovaFlight.dll' Guid='a2afdfa8-6d39-4095-ba71-f1529ec12aa6'>
+        <File Id='FusionXC.Data.SuperNovaFlight.dll' Name='FusionXC.Data.SuperNovaFlight.dll' DiskId='4' Source='../../Lib/FusionXC.Data.SuperNovaFlight.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.SynapseArchitect.dll' Guid='62429584-e572-435c-a93f-c806aac83ad9'>
+        <File Id='FusionXC.Data.SynapseArchitect.dll' Name='FusionXC.Data.SynapseArchitect.dll' DiskId='4' Source='../../Lib/FusionXC.Data.SynapseArchitect.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.SynapseX.dll' Guid='0a07a9ef-d70f-4b99-83a2-2ce30d6963cc'>
+        <File Id='FusionXC.Data.SynapseX.dll' Name='FusionXC.Data.SynapseX.dll' DiskId='4' Source='../../Lib/FusionXC.Data.SynapseX.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.SynapseX.Lib.dll' Guid='ff08a285-29e5-4806-8dc1-ca51fd7bb38c'>
+        <File Id='FusionXC.Data.SynapseX.Lib.dll' Name='FusionXC.Data.SynapseX.Lib.dll' DiskId='4' Source='../../Lib/FusionXC.Data.SynapseX.Lib.dll' KeyPath='yes' />
+      </Component>
+
+
+
+
+    </ComponentGroup>
+	</Fragment>
+</Wix>

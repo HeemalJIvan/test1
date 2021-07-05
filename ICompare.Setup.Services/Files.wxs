@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  
+  <?include $(var.ProjectDir)\Variables.wxi ?>
+  <Fragment>
+
+    <ComponentGroup Id="MatchingProductComponents" Directory="APPLICATIONFOLDER">
+      <Component Id="MatchingServiceExecutable" Guid="$(var.MATCHINGSERVICEUID)">
+        <File Id="ICompare.Business.MatchingService.exe" Name="ICompare.Business.MatchingService.exe" DiskId="1" Source="../../ICompare/Business/ICompare.Business.MatchingService/bin/Release/ICompare.Business.MatchingService.exe" KeyPath="yes" />
+
+        <!--<util:XmlFile Id="ModifyConnectionString" Action="setValue" Permanent="yes" File="[MatchingServiceFolder]ICompare.Business.MatchingService.exe.config"
+                  ElementPath="/configuration/connectionStrings/add[\[]@name='Operations'[\]]" Name="connectionString"
+                  Value="Test Successful"   Sequence="5"/>-->
+
+        <ServiceInstall
+					Id="MatchingServiceInstaller"
+					Type="ownProcess"
+					Name="$(var.MATCHINGSERVICENAME)"
+					DisplayName="$(var.MATCHINGSERVICEDESCRIPTION)"
+					Description="$(var.MATCHINGSERVICEDESCRIPTION)"
+					Start="demand"
+					ErrorControl="normal"
+				/>
+        <ServiceControl Id="MatchingService" Stop="both" Remove="uninstall" Name="$(var.MATCHINGSERVICENAME)" Wait="yes" />
+      </Component>
+
+      <Component Id='ICompare.Business.MatchingService.exe.config' Guid='{F8319296-3F0C-48AC-9121-70C356566E74}'>
+        <File Id='ICompare.Business.MatchingService.exe.config' Name='ICompare.Business.MatchingService.exe.config' DiskId='1' Source='../../ICompare/Business/ICompare.Business.MatchingService/bin/Release/ICompare.Business.MatchingService.exe.config' KeyPath='yes' />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="ImportProductComponents" Directory="APPLICATIONFOLDER">
+      <Component Id="ImportServiceExecutable" Guid="$(var.IMPORTSERVICEUID)">
+        <File Id="ICompare.Business.ImportService.exe" Name="ICompare.Business.ImportService.exe" DiskId="1" Source="../../ICompare/Business/ICompare.Business.ImportService/bin/Release/ICompare.Business.ImportService.exe" KeyPath="yes" />
+
+        <!--<util:XmlFile Id="ModifyConnectionString" Action="setValue" Permanent="yes" File="[MatchingServiceFolder]ICompare.Business.MatchingService.exe.config"
+                  ElementPath="/configuration/connectionStrings/add[\[]@name='Operations'[\]]" Name="connectionString"
+                  Value="Test Successful"   Sequence="5"/>-->
+
+        <ServiceInstall
+					Id="ImportServiceInstaller"
+					Type="ownProcess"
+					Name="$(var.IMPORTSERVICENAME)"
+					DisplayName="$(var.IMPORTSERVICEDESCRIPTION)"
+					Description="$(var.IMPORTSERVICEDESCRIPTION)"
+					Start="demand"
+					ErrorControl="normal"
+				/>
+        <ServiceControl Id="ImportService" Stop="both" Remove="uninstall" Name="$(var.IMPORTSERVICENAME)" Wait="yes" />
+      </Component>
+
+      <Component Id='ICompare.Business.ImportService.config' Guid='{A54BF3FC-0034-4444-90CE-218A8DFF701D}'>
+        <File Id='ICompare.Business.ImportService.config' Name='ICompare.Business.ImportService.exe.config' DiskId='1' Source='../../ICompare/Business/ICompare.Business.ImportService/bin/Release/ICompare.Business.ImportService.exe.config' KeyPath='yes' />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="ValidationProductComponents" Directory="APPLICATIONFOLDER">
+      <Component Id="ValidationServiceExecutable" Guid="$(var.VALIDATIONSERVICEUID)">
+        <File Id="ICompare.Business.ValidationService.exe" Name="ICompare.Business.ValidationService.exe" DiskId="1" Source="../../ICompare/Business/ICompare.Business.ValidationService/bin/Release/ICompare.Business.ValidationService.exe" KeyPath="yes" />
+        <ServiceInstall
+					Id="ValidationServiceInstaller"
+					Type="ownProcess"
+					Name="$(var.VALIDATIONSERVICENAME)"
+					DisplayName="$(var.VALIDATIONSERVICEDESCRIPTION)"
+					Description="$(var.VALIDATIONSERVICEDESCRIPTION)"
+					Start="demand"
+					ErrorControl="normal"
+				/>
+        <ServiceControl Id="ValidationService" Stop="both" Remove="uninstall" Name="$(var.VALIDATIONSERVICENAME)" Wait="yes" />
+      </Component>
+    
+      <Component Id='ICompare.Business.ValidationService.exe.config' Guid='{7159F6ED-DA5E-4A8C-8206-23FEEEB68CBE}'>
+        <File Id='ICompare.Business.ValidationService.exe.config' Name='ICompare.Business.ValidationService.exe.config' DiskId='1' Source='../../ICompare/Business/ICompare.Business.ValidationService/bin/Release/ICompare.Business.ValidationService.exe.config' KeyPath='yes' />
+      </Component>
+        
+      
+    </ComponentGroup>
+
+    <ComponentGroup Id="AllocationProductComponents" Directory="APPLICATIONFOLDER">
+      <Component Id="AllocationServiceExecutable" Guid="$(var.ALLOCATIONSERVICEUID)">
+        <File Id="ICompare.Business.AllocationService" Name="ICompare.Business.AllocationService.exe" DiskId="1" Source="../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.AllocationService.exe" KeyPath="yes" />
+        <ServiceInstall
+					Id="AllocationServiceInstaller"
+					Type="ownProcess"
+					Name="$(var.ALLOCATIONSERVICENAME)"
+					DisplayName="$(var.ALLOCATIONSERVICEDESCRIPTION)"
+					Description="$(var.ALLOCATIONSERVICEDESCRIPTION)"
+					Start="demand"
+					ErrorControl="normal"
+				/>
+        <ServiceControl Id="AllocationService" Stop="both" Remove="uninstall" Name="$(var.ALLOCATIONSERVICENAME)" Wait="yes" />
+
+        <!--<RegistryKey Id='ICompareRegInstallDir' Root='HKLM' Key='Software\[Manufacturer]\[ProductName]' ForceCreateOnInstall='yes'>
+          <RegistryValue Type='string' Name='AppPath' Value='[TARGETDIR]'/>
+          <RegistryValue Type='string' Name='InstallDir' Value='TBA' />
+        </RegistryKey>-->
+      </Component>
+
+      <Component Id='ICompare.Business.AllocationService.exe.config' Guid='{5FEBA992-72EC-452A-9177-294EB5881A8C}'>
+        <File Id='ICompare.Business.AllocationService.exe.config' Name='ICompare.Business.AllocationService.exe.config' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.AllocationService.exe.config' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.Business.AllocationServer' Guid='{DC197C83-57C1-4F33-8B2C-7D14590EF8AF}'>
+        <File Id='ICompare.Business.AllocationServer' Name='ICompare.Business.AllocationServer.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.AllocationServer.dll' KeyPath='yes' />
+      </Component>
+
+     
+      <Component Id='ICompare.Business' Guid='{609B6E50-7E70-4C67-80A6-ED5E3CDD150E}'>
+        <File Id='ICompare.Business' Name='ICompare.Business.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business/bin/Release/ICompare.Business.dll' KeyPath='yes' />
+      </Component>
+      <!--
+      <Component Id='ICompare.Business.MatchingServer' Guid='{8B8CDDEC-7999-406F-B257-9DFAEEFABDD9}'>
+        <File Id='ICompare.Business.MatchingServer' Name='ICompare.Business.MatchingServer.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.MatchingServer.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Business.Observer_icompareallocations' Guid='{36407F63-27F2-42AA-9154-5489AF926384}'>
+        <File Id='ICompare.Business.Observer_icompareallocations' Name='ICompare.Business.Observer.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.Observer.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Business.TransformationServer' Guid='{76B28698-E454-429B-A69A-AFB1E1707CDB}'>
+        <File Id='ICompare.Business.TransformationServer' Name='ICompare.Business.TransformationServer.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.TransformationServer.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Data' Guid='AA17D5BC-B5FB-4276-9F9A-959A1C064E57'>
+        <File Id='ICompare.Data' Name='ICompare.Data.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Data.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Data.Eventing' Guid='79B378EC-3FE6-45BF-A969-68EAA9512B68'>
+        <File Id='ICompare.Data.Eventing' Name='ICompare.Data.Eventing.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Data.Eventing.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='IronPython' Guid='{7CE41125-9030-42E9-A10B-454BD2C93417}'>
+        <File Id='IronPython' Name='IronPython.dll' DiskId='1' Source='../../Lib/IronPython.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='IronPython.Modules' Guid='{BCE2EAFE-D64C-4B3F-964E-B5980B236288}'>
+        <File Id='IronPython.Modules' Name='IronPython.Modules.dll' DiskId='1' Source='../../Lib/IronPython.Modules.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='Microsoft.Dynamic' Guid='8F1CC6BD-096F-4209-AE9B-72DFF63C05E2'>
+        <File Id='Microsoft.Dynamic' Name='Microsoft.Dynamic.dll' DiskId='1' Source='../../Lib/Microsoft.Dynamic.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='Microsoft.Scripting' Guid='CBED82CD-DF10-43CD-BA71-9BE54B503E34'>
+        <File Id='Microsoft.Scripting' Name='Microsoft.Scripting.dll' DiskId='1' Source='../../Lib/Microsoft.Scripting.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='Microsoft.Scripting.Metadata' Guid='C8FBC246-039F-4AC3-803D-9E1C9D3A6F10'>
+        <File Id='Microsoft.Scripting.Metadata' Name='Microsoft.Scripting.Metadata.dll' DiskId='1' Source='../../Lib/Microsoft.Scripting.Metadata.dll' KeyPath='yes' />
+      </Component>-->
+
+      
+    </ComponentGroup>
+
+    <ComponentGroup Id="ConsoleComponents" Directory="APPLICATIONFOLDER">
+      <!--DISK 1-->
+
+      <Component Id='ICompare.Test.AllocationEngineConsole.exe' Guid='{EA96C74D-D58B-48F9-9311-D490D7993638}'>
+        <File Id='ICompare.Test.AllocationEngineConsole.exe' Name='ICompare.Test.AllocationEngineConsole.exe' DiskId='1' Source='../../ICompare/Test/ICompare.Test.AllocationEngineConsole/bin/Release/ICompare.Test.AllocationEngineConsole.exe' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Test.AllocationEngineConsole.exe.config' Guid='{2086541E-B013-4E82-8A0F-ED23BF8318D5}'>
+        <File Id='ICompare.Test.AllocationEngineConsole.exe.config' Name='ICompare.Test.AllocationEngineConsole.exe.config' DiskId='1' Source='../../ICompare/Test/ICompare.Test.AllocationEngineConsole/bin/Release/ICompare.Test.AllocationEngineConsole.exe.config' KeyPath='yes' />
+      </Component>
+      
+      <Component Id='ICompare.Test.MatchingEngineConsole.exe' Guid='{6B70C501-5228-4852-94A6-C4EB6C064F5C}'>
+        <File Id='ICompare.Test.MatchingEngineConsole.exe' Name='ICompare.Test.MatchingEngineConsole.exe' DiskId='1' Source='../../ICompare/Test/ICompare.Test.MatchingEngineConsole/bin/Release/ICompare.Test.MatchingEngineConsole.exe' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Test.MatchingEngineConsole.exe.config' Guid='{5B155458-3B26-485D-8344-1B46832CEDAB}'>
+        <File Id='ICompare.Test.MatchingEngineConsole.exe.config' Name='ICompare.Test.MatchingEngineConsole.exe.config' DiskId='1' Source='../../ICompare/Test/ICompare.Test.MatchingEngineConsole/bin/Release/ICompare.Test.MatchingEngineConsole.exe.config' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Test.ValidationEngineConsole.exe' Guid='{2C791BBF-89BA-4B60-A844-D453AEED9DF0}'>
+        <File Id='ICompare.Test.ValidationEngineConsole.exe' Name='ICompare.Test.ValidationEngineConsole.exe' DiskId='1' Source='../../ICompare/Test/ICompare.Test.ValidationEngineConsole/bin/Release/ICompare.Test.ValidationEngineConsole.exe' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Test.ValidationEngineConsole.exe.config' Guid='{0826AE4C-3C45-466E-A510-2BEE3A81D586}'>
+        <File Id='ICompare.Test.ValidationEngineConsole.exe.config' Name='ICompare.Test.ValidationEngineConsole.exe.config' DiskId='1' Source='../../ICompare/Test/ICompare.Test.ValidationEngineConsole/bin/Release/ICompare.Test.ValidationEngineConsole.exe.config' KeyPath='yes' />
+      </Component>
+      
+      <!--<Component Id='Fluid.Test.SchedulerConsole.exe' Guid='{9676A5FA-E676-4BF5-A4AF-D8BAD4B5C544}'>
+        <File Id='Fluid.Test.SchedulerConsole.exe' Name='Fluid.Test.SchedulerConsole.exe' DiskId='1' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release/Fluid.Test.SchedulerConsole.exe' KeyPath='yes' />
+      </Component>
+      <Component Id='Fluid.Test.SchedulerConsole.exe.config' Guid='{93C6D7A6-DB72-4921-B2C4-E25EC56DA4D8}'>
+        <File Id='Fluid.Test.SchedulerConsole.exe.config' Name='Fluid.Test.SchedulerConsole.exe.config' DiskId='1' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release/Fluid.Test.SchedulerConsole.exe.config' KeyPath='yes' />
+      </Component>-->
+
+      <!--<Component Id='ICompare.Test.ImportEngineTest.exe' Guid='{385E89C3-E7AF-4A5E-A0FF-224CF11A00EB}'>
+        <File Id='ICompare.Test.ImportEngineTest.exe' Name='ICompare.Test.ImportEngineTest.exe' DiskId='1' Source='../../ICompare/Test/ICompare.Test.ImportEngineTest/bin/Release/ICompare.Test.ImportEngineTest.exe' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Test.ImportEngineTest.exe.config' Guid='{D283868C-67A7-4423-B61F-CF4402BC2603}'>
+        <File Id='ICompare.Test.ImportEngineTest.exe.config' Name='ICompare.Test.ImportEngineTest.exe.config' DiskId='1' Source='../../ICompare/Test/ICompare.Test.ImportEngineTest/bin/Release/ICompare.Test.ImportEngineTest.exe.config' KeyPath='yes' />
+      </Component>-->
+    </ComponentGroup>
+  </Fragment>
+
+
+  <Fragment>
+    <ComponentGroup Id="PostInstallerComponents" Directory="APPLICATIONFOLDER">
+      <Component Id='ICompare.Setup.ServicesPostInstaller' Guid='{97CC551D-7239-41B4-88ED-4FA33C889227}'>
+        <File Id='ICompare.Setup.ServicesPostInstaller' Name='ICompare.Setup.ServicesPostInstaller.exe' DiskId='1' Source='../../Setup/ICompare.Setup.ServicesPostInstaller/bin/Release/ICompare.Setup.ServicesPostInstaller.exe' KeyPath = 'yes'>
+        </File>
+      </Component>
+      <Component Id='ICompare.Setup.ServicesPostInstaller.config' Guid='{9D45A716-ACA8-4E3C-B593-3E77BC0A69C9}'>
+        <File Id='ICompare.Setup.ServicesPostInstaller.config' Name='ICompare.Setup.ServicesPostInstaller.exe.config' DiskId='1' Source='../../Setup/ICompare.Setup.ServicesPostInstaller/bin/Release/ICompare.Setup.ServicesPostInstaller.exe.config' KeyPath = 'yes'>
+        </File>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

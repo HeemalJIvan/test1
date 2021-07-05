@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <?define PRODUCT="iCompare Allocation Service"?>
+  <?define MAINEXE="ICompare.Business.AllocationService"?>
+  <?define VERSION=!(bind.FileVersion.$(var.MAINEXE))?>
+  <?define ALLOCATIONSERVICEUID="{E6109EA2-3C4B-45A9-8997-BDD3FE1CF758}"?>
+  <?define UPGRADECODEUID="{2A095426-6C75-4B83-92F5-B003AE9BFAE6}"?>
+</Include>

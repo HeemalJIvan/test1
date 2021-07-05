@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<ComponentGroup Id="LibComponents" Directory="LIBINSTALLFOLDER">
+
+			<!--<Component Id='Solar.Common.Transformers.ActivityTransformers' Guid='{0A62C737-D42D-4068-8B30-A0494A5D8924}'>
+        <File Id='Solar.Common.Transformers.ActivityTransformers' Name='Solar.Common.Transformers.ActivityTransformers.dll' DiskId='6' Source='../../Lib/Solar.Common.Transformers.ActivityTransformers.dll' KeyPath='yes' />
+      </Component>-->
+			<Component Id='Microsoft.Data.ConnectionUI.Dialog' Guid='2369BC3F-AD7E-4960-B847-A71452345A3C'>
+				<File Id='Microsoft.Data.ConnectionUI.Dialog.dll' Name='Microsoft.Data.ConnectionUI.Dialog.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Microsoft.Data.ConnectionUI.Dialog.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='Microsoft.Data.ConnectionUI' Guid='887967F0-E76F-4839-9E0A-CF59D86CE3BC'>
+				<File Id='Microsoft.Data.ConnectionUI.dll' Name='Microsoft.Data.ConnectionUI.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Microsoft.Data.ConnectionUI.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='IronPython' Guid='CC00B175-E661-438A-BF1B-019838A8ECE0'>
+				<File Id='IronPython' Name='IronPython.dll' DiskId='6' Source='..\..\ICompare\Business\ICompare.Business.MatchingServer\bin\Release\IronPython.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='IronPython.Modules' Guid='5A345820-81FA-40CE-916B-EB7D4D10733E'>
+				<File Id='IronPython.Modules' Name='IronPython.Modules.dll' DiskId='6' Source='..\..\ICompare\Business\ICompare.Business.MatchingServer\bin\Release\IronPython.Modules.dll' KeyPath='yes' />
+			</Component>
+			<!--<Component Id='Microsoft.Dynamic' Guid='8F1CC6BD-096F-4209-AE9B-72DFF63C05E2'>
+        <File Id='Microsoft.Dynamic' Name='Microsoft.Dynamic.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Microsoft.Dynamic.dll' KeyPath='yes' />
+      </Component>-->
+			<Component Id='Microsoft.Scripting' Guid='CBED82CD-DF10-43CD-BA71-9BE54B503E34'>
+				<File Id='Microsoft.Scripting' Name='Microsoft.Scripting.dll' DiskId='6' Source='..\..\ICompare\Business\ICompare.Business.MatchingServer\bin\Release\Microsoft.Scripting.dll' KeyPath='yes' />
+			</Component>
+			<!--<Component Id='ICSharpCode.SharpZipLib' Guid='{4CD96302-460E-46AD-A12E-C9F633D4B0F8}'>
+        <File Id='ICSharpCode.SharpZipLib' Name='ICSharpCode.SharpZipLib.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/ICSharpCode.SharpZipLib.dll' KeyPath='yes' />
+      </Component>-->
+			<!--<Component Id='Xceed.Wpf.Toolkit' Guid='3C95D745-B0B5-433D-87BF-D3EF382867ED'>
+        <File Id='Xceed.Wpf.Toolkit' Name='Xceed.Wpf.Toolkit.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Xceed.Wpf.Toolkit.dll' KeyPath='yes' />
+      </Component>-->
+			<Component Id='Excel' Guid='{927BE785-F22E-43EE-A14B-B0D940DAC8C7}'>
+				<File Id='Excel' Name='Excel.dll' DiskId='6' Source='../../Lib/Excel.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='Bytescout.PDFExtractor' Guid='{6E3EDAC3-324E-4F2E-8CA8-5E2A6A7E47DC}'>
+				<File Id='Bytescout.PDFExtractor' Name='Bytescout.PDFExtractor.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Bytescout.PDFExtractor.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='Bytescout.PDFExtractor.OCRExtension' Guid='{AE5138D2-A63D-4181-B78F-EFA585188D8D}'>
+				<File Id='Bytescout.PDFExtractor.OCRExtension' Name='Bytescout.PDFExtractor.OCRExtension.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Bytescout.PDFExtractor.OCRExtension.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='AutoMapper' Guid='E017BFA1-3C8D-4292-94F2-D7510CB03142'>
+				<File Id='AutoMapper' Name='AutoMapper.dll' DiskId='6' Source='../../ICompare/UI/Module/ICompare.UI.Wpf.Module.AllocationWorkflow/bin/Release/AutoMapper.dll' KeyPath='yes' />
+			</Component>
+			<!--<Component Id='Ionic.Zip' Guid='0527FE73-FCA6-4C4B-9D50-104F8FF66195'>
+        <File Id='Ionic.Zip' Name='Ionic.Zip.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Ionic.Zip.dll' KeyPath='yes' />
+      </Component>-->
+			<Component Id='log4net' Guid='44C8B7F2-9806-4657-991C-9890A211A7BE'>
+				<File Id='log4net' Name='log4net.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/log4net.dll' KeyPath='yes' />
+			</Component>
+			<!--<Component Id='NCalc' Guid='907CE3BC-F997-4BD5-8E6E-C289E5817A2B'>
+        <File Id='NCalc' Name='NCalc.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/NCalc.dll' KeyPath='yes' />
+      </Component>-->
+			<!--<Component Id='OpenPop' Guid='97619551-56AF-43B8-8C94-65A5B9743D38'>
+        <File Id='OpenPop' Name='OpenPop.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/OpenPop.dll' KeyPath='yes' />
+      </Component>-->
+			<!--<Component Id='TIBCO.EMS' Guid='{3DB35CCA-3489-4797-AB21-AA09917749F8}'>
+        <File Id='TIBCO.EMS' Name='TIBCO.EMS.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/TIBCO.EMS.dll' KeyPath='yes' />
+      </Component>-->
+
+			<Component Id='Microsoft.CSharp' Guid='{d2a0e192-ac0c-4892-8f54-1ec9882707fd}'>
+				<File Id='Microsoft.CSharp' Name='Microsoft.CSharp.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Microsoft.CSharp.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='Newtonsoft.Json' Guid='{cc6a1bbd-11ba-4de7-bea7-e651759254b5}'>
+				<File Id='Newtonsoft.Json' Name='Newtonsoft.Json.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Newtonsoft.Json.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='ICompareCore.Business.Accounting' Guid='{0B6CA7D8-FDF8-484F-9AA9-392663753CD2}'>
+				<File Id='ICompareCore.Business.Accounting' Name='ICompareCore.Business.Accounting.dll' DiskId='6' Source='../../ICompareCore/Business/ICompareCore.Business.Accounting/bin/Release/ICompareCore.Business.Accounting.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='ICompareCore.Business.Scripting' Guid='{F840CB01-D3E0-4077-B6DA-1DC579EB066A}'>
+				<File Id='ICompareCore.Business.Scripting' Name='ICompareCore.Business.Scripting.dll' DiskId='6' Source='../../ICompareCore/Business/ICompareCore.Business.Scripting/bin/Release/ICompareCore.Business.Scripting.dll' KeyPath = 'yes' />
+			</Component>
+
+			<Component Id='ICompareCore.Business.DBUtils' Guid='{52721D0C-0F81-476F-9ADC-33A5FBFCEE65}'>
+				<File Id='ICompareCore.Business.DBUtils' Name='ICompareCore.Business.DBUtils.dll' DiskId='6' Source='../../ICompareCore/Business/ICompareCore.Business.DBUtils/bin/Release/ICompareCore.Business.DBUtils.dll' KeyPath = 'yes' />
+			</Component>
+
+			<Component Id='ICompareCore.Business.UnitTest' Guid='{3DAA6CD5-6487-41BF-AAE1-0794D1D1F58B}'>
+				<File Id='ICompareCore.Business.UnitTest' Name='ICompareCore.Business.UnitTest.dll' DiskId='6' Source='../../ICompareCore/Business/ICompareCore.Business.UnitTest/bin/Release/ICompareCore.Business.UnitTest.dll' KeyPath = 'yes' />
+			</Component>
+
+			<Component Id='ICompareCore.Business.Servers' Guid='{396730D0-11B6-4747-88DF-5FEB3746E9E0}'>
+				<File Id='ICompareCore.Business.Servers' Name='ICompareCore.Business.Servers.dll' DiskId='6' Source='../../ICompareCore/Business/ICompareCore.Business.Servers/bin/Release/ICompareCore.Business.Servers.dll' KeyPath = 'yes' />
+			</Component>
+
+			<Component Id='Continuum.Business.Data' Guid='{5BD5A4A4-C9AD-48B7-9030-C28BE5441F7A}'>
+				<File Id='Continuum.Business.Data' Name='Continuum.Business.Data.dll' DiskId='6' Source='../../Lib/Continuum.Business.Data.dll' KeyPath = 'yes' />
+			</Component>
+
+			<Component Id='Continuum.Business' Guid='{1B5824C3-316B-415F-B2BE-F0EA1B56F595}'>
+				<File Id='Continuum.Business' Name='Continuum.Business.dll' DiskId='6' Source='../../Lib/Continuum.Business.dll' KeyPath = 'yes' />
+			</Component>
+
+			<Component Id='Continuum.Business.DataProviders' Guid='{FF8E9A8B-B18D-47FF-AAC7-7515F16017B6}'>
+				<File Id='Continuum.Business.DataProviders' Name='Continuum.Business.DataProviders.dll' DiskId='6' Source='../../Lib/Continuum.Business.DataProviders.dll' KeyPath = 'yes' />
+			</Component>
+
+			<Component Id='Continuum.Business.Kinetic' Guid='{6D78A7C4-BE48-4C22-BB4D-109C0B2FD756}'>
+				<File Id='Continuum.Business.Kinetic' Name='Continuum.Business.Kinetic.dll' DiskId='6' Source='../../Lib/Continuum.Business.Kinetic.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='Continuum.Business.DataMorphing' Guid='{BA77B252-12CF-45FE-BD3C-90F416EDE0C9}'>
+				<File Id='Continuum.Business.DataMorphing' Name='Continuum.Business.DataMorphing.dll' DiskId='6' Source='../../Lib/Continuum.Business.DataMorphing.dll' KeyPath = 'yes' />
+			</Component>
+
+			<Component Id='Continuum.Business.Raptor' Guid='{92534B11-4E4E-40B3-93BF-752E8F843A8B}'>
+				<File Id='Continuum.Business.Raptor' Name='Continuum.Business.Raptor.dll' DiskId='6' Source='../../Lib/Continuum.Business.Raptor.dll' KeyPath = 'yes' />
+			</Component>
+
+			<Component Id='ICompareCore.Business' Guid='{43F70666-3330-42A1-B67E-F3D9BDD4F28A}'>
+				<File Id='ICompareCore.Business' Name='ICompareCore.Business.dll' DiskId='6' Source='../../ICompareCore/Business/ICompareCore.Business/bin/Release/ICompareCore.Business.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='EntityFramework' Guid='{3AB62828-1892-4E0B-ADCF-AA6FA410C89A}'>
+				<File Id='EntityFramework' Name='EntityFramework.dll' DiskId='6' Source='../../ICompareCore/Test/ICompareCore.Test.DBToolConsole/bin/Release/EntityFramework.dll' KeyPath = 'yes' />
+			</Component>
+			<!--<Component Id='PresentationCore' Guid='{200a9c14-68d8-4031-8433-894eee938ed0}'>
+        <File Id='PresentationCore' Name='PresentationCore.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid/PresentationCore.dll' KeyPath = 'yes' />
+      </Component>-->
+			<!--<Component Id='PresentationFramework' Guid='{9edf3869-c709-4d18-812e-7e881b972554}'>
+        <File Id='PresentationFramework' Name='PresentationFramework.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid/PresentationFramework.dll' KeyPath = 'yes' />
+      </Component>-->
+			<!--<Component Id='Solar.Activity.Business' Guid='{053ddc5a-14e3-4881-b28e-a2631899604c}'>
+        <File Id='Solar.Activity.Business' Name='Solar.Activity.Business.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid/Solar.Activity.Business.dll' KeyPath = 'yes' />
+      </Component>-->
+			<!--<Component Id='Solar.Activity.Data.Models' Guid='{f0f1bcee-6e84-4b4e-8b96-cd89a6c748f4}'>
+        <File Id='Solar.Activity.Data.Models' Name='Solar.Activity.Data.Models.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid/Solar.Activity.Data.Models.dll' KeyPath = 'yes' />
+      </Component>-->
+			<!--<Component Id='Solar.Activity.UI.Views.ActivityPageManager' Guid='{f24c0950-edf7-4e59-889d-078051b264b1}'>
+        <File Id='Solar.Activity.UI.Views.ActivityPageManager' Name='Solar.Activity.UI.Views.ActivityPageManager.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid/Solar.Activity.UI.Views.ActivityPageManager.dll' KeyPath = 'yes' />
+      </Component>-->
+			<!--<Component Id='System.Windows.Interactivity' Guid='{a794705f-5382-4352-842f-4b58d695b544}'>
+        <File Id='System.Windows.Interactivity' Name='System.Windows.Interactivity.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid/System.Windows.Interactivity.dll' KeyPath = 'yes' />
+      </Component>-->
+			<!--<Component Id='Microsoft.ReportViewer.WinForms' Guid='{22F6840D-E895-47EA-AAA5-A16E526205CA}'>
+        <File Id='Microsoft.ReportViewer.WinForms' Name='Microsoft.ReportViewer.WinForms.dll' DiskId='6' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid/Microsoft.ReportViewer.WinForms.dll' KeyPath='yes' />
+      </Component>-->
+
+
+
+			<!-- DEVEXPRESS DISK3-->
+
+			<Component Id='DevExpress.RichEdit.v19.1.Core' Guid='BE4C5D26-65C4-44F4-9AFB-4B0FDACA1E31'>
+				<File Id='DevExpress.RichEdit.v19.1.Core' Name='DevExpress.RichEdit.v19.1.Core.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.RichEdit.v19.1.Core.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Accordion.v19.1' Guid='32DE3681-4415-42E4-A082-8C36BB8BDB60'>
+				<File Id='DevExpress.Xpf.Accordion.v19.1' Name='DevExpress.Xpf.Accordion.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Accordion.v19.1.dll' KeyPath='yes' />
+			</Component>
+      <Component Id='DevExpress.Web.v19.1' Guid='ABE6698B-A57E-4319-BF1C-3CF0973B8769'>
+        <File Id='DevExpress.Web.v19.1' Name='DevExpress.Web.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Web.v19.1.dll' KeyPath='yes' />
+      </Component>
+			<Component Id='DevExpress.Xpf.Docking.v19.1' Guid='B5B40ECD-F313-40F9-A8EB-6AABCFD28BF3'>
+				<File Id='DevExpress.Xpf.Docking.v19.1' Name='DevExpress.Xpf.Docking.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.Docking.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Grid.v19.1' Guid='F87AB709-CB5B-40AE-A027-D2C0FC892590'>
+				<File Id='DevExpress.Xpf.Grid.v19.1' Name='DevExpress.Xpf.Grid.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.Grid.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.LayoutControl.v19.1' Guid='AC1315CB-5297-486F-A00B-CAA8D965D5FD'>
+				<File Id='DevExpress.Xpf.LayoutControl.v19.1' Name='DevExpress.Xpf.LayoutControl.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.LayoutControl.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.NavBar.v19.1' Guid='E3CC1906-F809-4D32-B27B-D97D85E5B0A7'>
+				<File Id='DevExpress.Xpf.NavBar.v19.1' Name='DevExpress.Xpf.NavBar.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.NavBar.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Printing.v19.1' Guid='AFAF92A0-9B38-4389-B98A-BC669A9EC86C'>
+				<File Id='DevExpress.Xpf.Printing.v19.1' Name='DevExpress.Xpf.Printing.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.Printing.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Ribbon.v19.1' Guid='93CC578F-1DE7-4C83-A3ED-BB0F3704F2AE'>
+				<File Id='DevExpress.Xpf.Ribbon.v19.1' Name='DevExpress.Xpf.Ribbon.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.Ribbon.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.RichEdit.v19.1' Guid='F11FB40D-F470-4CCB-8F2D-55434D980B08'>
+				<File Id='DevExpress.Xpf.RichEdit.v19.1' Name='DevExpress.Xpf.RichEdit.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.RichEdit.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.DXStyle.v19.1' Guid='{89E638CB-4D16-40C1-9249-E3E1953CD7C7}'>
+				<File Id='DevExpress.Xpf.Themes.DXStyle.v19.1' Name='DevExpress.Xpf.Themes.DXStyle.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.DXStyle.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.LightGray.v19.1' Guid='FA9B80A6-D8A2-4016-B086-60457C342F40'>
+				<File Id='DevExpress.Xpf.Themes.LightGray.v19.1' Name='DevExpress.Xpf.Themes.LightGray.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.LightGray.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.MetropolisDark.v19.1' Guid='69F1AFF6-B7AE-4191-8DB3-8C3D4280F073'>
+				<File Id='DevExpress.Xpf.Themes.MetropolisDark.v19.1' Name='DevExpress.Xpf.Themes.MetropolisDark.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.MetropolisDark.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.MetropolisLight.v19.1' Guid='{1B1EC0CE-9045-4D9C-8F39-94D67C8476DB}'>
+				<File Id='DevExpress.Xpf.Themes.MetropolisLight.v19.1' Name='DevExpress.Xpf.Themes.MetropolisLight.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.MetropolisLight.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.Office2007Black.v19.1' Guid='4BB8FB83-40B7-4ECB-8AFB-B91ED172FCB0'>
+				<File Id='DevExpress.Xpf.Themes.Office2007Black.v19.1' Name='DevExpress.Xpf.Themes.Office2007Black.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.Office2007Black.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.Office2007Blue.v19.1' Guid='BD2D1BA6-1B96-4BC1-8B5A-4353669159D3'>
+				<File Id='DevExpress.Xpf.Themes.Office2007Blue.v19.1' Name='DevExpress.Xpf.Themes.Office2007Blue.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.Office2007Blue.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.Office2007Silver.v19.1' Guid='2C23DAF6-6B71-4585-BD9F-726D6131A8F2'>
+				<File Id='DevExpress.Xpf.Themes.Office2007Silver.v19.1' Name='DevExpress.Xpf.Themes.Office2007Silver.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.Office2007Silver.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.Office2010Black.v19.1' Guid='5F1E75C1-26DE-485C-AC43-8F1477B4A331'>
+				<File Id='DevExpress.Xpf.Themes.Office2010Black.v19.1' Name='DevExpress.Xpf.Themes.Office2010Black.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.Office2010Black.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.Office2010Blue.v19.1' Guid='{61A891E6-AF88-4D94-A596-75D41474A5A0}'>
+				<File Id='DevExpress.Xpf.Themes.Office2010Blue.v19.1' Name='DevExpress.Xpf.Themes.Office2010Blue.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.Office2010Blue.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.Office2010Silver.v19.1' Guid='{03FCB1CA-392C-4421-B8E0-41117208E4CC}'>
+				<File Id='DevExpress.Xpf.Themes.Office2010Silver.v19.1' Name='DevExpress.Xpf.Themes.Office2010Silver.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.Office2010Silver.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.Seven.v19.1' Guid='F05C3503-AC62-451F-ADD7-FF0509DF9820'>
+				<File Id='DevExpress.Xpf.Themes.Seven.v19.1' Name='DevExpress.Xpf.Themes.Seven.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.Seven.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.VS2010.v19.1' Guid='{DB88630A-4B61-4190-9235-369A1FFFD77E}'>
+				<File Id='DevExpress.Xpf.Themes.VS2010.v19.1' Name='DevExpress.Xpf.Themes.VS2010.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.VS2010.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.Office2013.v19.1' Guid='{200B7AFF-0217-4FD9-AC1F-89D51A8B24E0}'>
+				<File Id='DevExpress.Xpf.Themes.Office2013.v19.1' Name='DevExpress.Xpf.Themes.Office2013.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.Office2013.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Charts.v19.1.Core' Guid='{0F9F45DB-16C7-42EF-BD17-86F349128A6F}'>
+				<File Id='DevExpress.Charts.v19.1.Core' Name='DevExpress.Charts.v19.1.Core.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Charts.v19.1.Core.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Data.v19.1' Guid='{0722805F-DA44-4C63-A064-F488466C0A0D}'>
+				<File Id='DevExpress.Data.v19.1' Name='DevExpress.Data.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Data.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Docs.v19.1' Guid='{0B014EED-2153-4796-BEFF-142266C29CED}'>
+				<File Id='DevExpress.Docs.v19.1' Name='DevExpress.Docs.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Docs.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Office.v19.1.Core' Guid='{1C793B24-7477-4B87-A76D-09C58321DDDA}'>
+				<File Id='DevExpress.Office.v19.1.Core' Name='DevExpress.Office.v19.1.Core.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Office.v19.1.Core.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Printing.v19.1.Core' Guid='{AE9F4F8F-4C37-40F0-8D6F-DF1824730E75}'>
+				<File Id='DevExpress.Printing.v19.1.Core' Name='DevExpress.Printing.v19.1.Core.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Printing.v19.1.Core.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Spreadsheet.v19.1.Core' Guid='{AFAE3A3F-6C07-4B9D-979A-BB89B94F88CA}'>
+				<File Id='DevExpress.Spreadsheet.v19.1.Core' Name='DevExpress.Spreadsheet.v19.1.Core.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Spreadsheet.v19.1.Core.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Mvvm.v19.1' Guid='{F56776D9-E93C-476D-8E57-6897AC25DC82}'>
+				<File Id='DevExpress.Mvvm.v19.1' Name='DevExpress.Mvvm.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Mvvm.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Charts.v19.1' Guid='{6A1498F3-B446-4C2F-8A84-1C49B68E212A}'>
+				<File Id='DevExpress.Xpf.Charts.v19.1' Name='DevExpress.Xpf.Charts.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.Charts.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Core.v19.1' Guid='{0DE1C50C-480B-4EC9-9EC5-273D7F118FC6}'>
+				<File Id='DevExpress.Xpf.Core.v19.1' Name='DevExpress.Xpf.Core.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.Core.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Grid.v19.1.Core' Guid='{BE40DF16-664B-45FF-A51F-2437E8F9E632}'>
+				<File Id='DevExpress.Xpf.Grid.v19.1.Core' Name='DevExpress.Xpf.Grid.v19.1.Core.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.Grid.v19.1.Core.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Layout.v19.1.Core' Guid='{C6084D5B-3331-4EF7-9C1B-9E162781E7C4}'>
+				<File Id='DevExpress.Xpf.Layout.v19.1.Core' Name='DevExpress.Xpf.Layout.v19.1.Core.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.Layout.v19.1.Core.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Spreadsheet.v19.1' Guid='{23C8E121-616D-40B1-AE30-2D7BD9422430}'>
+				<File Id='DevExpress.Xpf.Spreadsheet.v19.1' Name='DevExpress.Xpf.Spreadsheet.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.Spreadsheet.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.XtraPdfViewer.v19.1' Guid='{8C5F5A26-761B-4AFE-A40E-9DB77F7D4EEE}'>
+				<File Id='DevExpress.XtraPdfViewer.v19.1' Name='DevExpress.XtraPdfViewer.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.XtraPdfViewer.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Utils.v19.1' Guid='{F7C974C9-138E-444E-A95C-0DD2DC9AD686}'>
+				<File Id='DevExpress.Utils.v19.1' Name='DevExpress.Utils.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Utils.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Pdf.v19.1.Core' Guid='{F13B61A3-8CE1-49DF-9666-56D982E271CD}'>
+				<File Id='DevExpress.Pdf.v19.1.Core' Name='DevExpress.Pdf.v19.1.Core.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Pdf.v19.1.Core.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.XtraBars.v19.1' Guid='{7E6AD1C6-808A-423E-9784-80A1A01137C9}'>
+				<File Id='DevExpress.XtraBars.v19.1' Name='DevExpress.XtraBars.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.XtraBars.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.XtraEditors.v19.1' Guid='{173E82CE-0EC7-4118-A781-73A956A98995}'>
+				<File Id='DevExpress.XtraEditors.v19.1' Name='DevExpress.XtraEditors.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.XtraEditors.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Pdf.v19.1.Drawing' Guid='{709819DF-9C3C-43F2-9BCF-4052CA19F044}'>
+				<File Id='DevExpress.Pdf.v19.1.Drawing' Name='DevExpress.Pdf.v19.1.Drawing.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Pdf.v19.1.Drawing.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.XtraTreeList.v19.1' Guid='{0C2367B5-4AFD-451E-93F2-B19BB6CD9B7A}'>
+				<File Id='DevExpress.XtraTreeList.v19.1' Name='DevExpress.XtraTreeList.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.XtraTreeList.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Themes.Office2016White.v19.1' Guid='{82AA1465-9C39-4153-A1A2-2FC4CEB48305}'>
+				<File Id='DevExpress.Xpf.Themes.Office2016White.v19.1' Name='DevExpress.Xpf.Themes.Office2016White.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Themes.Office2016White.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Grid.v19.1.Extensions' Guid='{1EEA947C-4836-41DF-AD31-31583FC93E89}'>
+				<File Id='DevExpress.Xpf.Grid.v19.1.Extensions' Name='DevExpress.Xpf.Grid.v19.1.Extensions.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.Grid.v19.1.Extensions.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.CodeParser.v19.1' Guid='{de757b3e-c5fc-4359-b26f-f735fc2c56a9}'>
+				<File Id='DevExpress.CodeParser.v19.1' Name='DevExpress.CodeParser.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.CodeParser.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.DataAccess.v19.1' Guid='{42a9a6ff-aff2-48b3-925f-c9957c419e6b}'>
+				<File Id='DevExpress.DataAccess.v19.1' Name='DevExpress.DataAccess.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.DataAccess.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.DemoData.v19.1.Core' Guid='{d59f9dde-e45c-48c7-8544-7587db4c5ee0}'>
+				<File Id='DevExpress.DemoData.v19.1.Core' Name='DevExpress.DemoData.v19.1.Core.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.DemoData.v19.1.Core.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.DemoData.v19.1' Guid='{68173184-7121-41fc-bcc1-0f24ee3c711c}'>
+				<File Id='DevExpress.DemoData.v19.1' Name='DevExpress.DemoData.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.DemoData.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.Images.v19.1' Guid='{5f515ea2-8a77-4d92-bcac-02372667f34c}'>
+				<File Id='DevExpress.Images.v19.1' Name='DevExpress.Images.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Images.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.Snap.v19.1.Core' Guid='{084c1aa5-3d47-418b-bbbb-8245bb5d2001}'>
+				<File Id='DevExpress.Snap.v19.1.Core' Name='DevExpress.Snap.v19.1.Core.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Snap.v19.1.Core.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.Sparkline.v19.1.Core' Guid='{b261938e-a16d-4ff4-a73a-beec7f22107c}'>
+				<File Id='DevExpress.Sparkline.v19.1.Core' Name='DevExpress.Sparkline.v19.1.Core.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Sparkline.v19.1.Core.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Controls.v19.1' Guid='{2dd5f8c4-f7ca-4d62-ab9f-b1b2d192ebe7}'>
+				<File Id='DevExpress.Xpf.Controls.v19.1' Name='DevExpress.Xpf.Controls.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.Controls.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.DemoBase.v19.1' Guid='{caf7c5b2-9f82-4aa8-8118-eb1ff353feac}'>
+				<File Id='DevExpress.Xpf.DemoBase.v19.1' Name='DevExpress.Xpf.DemoBase.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.DemoBase.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.DocumentViewer.v19.1.Core' Guid='{8c6e98ad-2cad-4a9b-89ae-9b6e22b38ea3}'>
+				<File Id='DevExpress.Xpf.DocumentViewer.v19.1.Core' Name='DevExpress.Xpf.DocumentViewer.v19.1.Core.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.DocumentViewer.v19.1.Core.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.PdfViewer.v19.1' Guid='{7426cc28-41e6-4879-9019-68b19bb293bf}'>
+				<File Id='DevExpress.Xpf.PdfViewer.v19.1' Name='DevExpress.Xpf.PdfViewer.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.PdfViewer.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.Xpo.v19.1' Guid='{e0c0d6c2-6e51-4718-853f-61f3caa75dfc}'>
+				<File Id='DevExpress.Xpo.v19.1' Name='DevExpress.Xpo.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpo.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.XtraCharts.v19.1' Guid='{7734bcca-7326-477f-a5b0-54107cd498d3}'>
+				<File Id='DevExpress.XtraCharts.v19.1' Name='DevExpress.XtraCharts.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.XtraCharts.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='Fluid.DevExpress.XtraGrid.v19.1' Guid='{FE69E3AB-09DF-4D10-B994-92FEF479A7E9}'>
+				<File Id='Fluid.DevExpress.XtraGrid.v19.1' Name='DevExpress.XtraGrid.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.XtraGrid.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='Fluid.DevExpress.XtraLayout.v19.1' Guid='{31599691-7AF6-456B-8F38-C9C5B13FCB30}'>
+				<File Id='Fluid.DevExpress.XtraLayout.v19.1' Name='DevExpress.XtraLayout.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.XtraLayout.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='Fluid.DevExpress.XtraPrinting.v19.1' Guid='{C0DB4FC8-1AC2-4478-BA92-DCC54D951A33}'>
+				<File Id='Fluid.DevExpress.XtraPrinting.v19.1' Name='DevExpress.XtraPrinting.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.XtraPrinting.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='Fluid.DevExpress.Diagram.v19.1.Core' Guid='{3C9B6145-2E96-46EE-9000-A41187566EF4}'>
+				<File Id='Fluid.DevExpress.Diagram.v19.1.Core' Name='DevExpress.Diagram.v19.1.Core.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Diagram.v19.1.Core.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.PropertyGrid.v19.1' Guid='{492E2B20-7E53-45DF-8759-46A1C0F59AA3}'>
+				<File Id='DevExpress.Xpf.PropertyGrid.v19.1' Name='DevExpress.Xpf.PropertyGrid.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.PropertyGrid.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Diagram.v19.1' Guid='{CB27A280-62FC-47C4-AB39-63C6C5B92212}'>
+				<File Id='DevExpress.Xpf.Diagram.v19.1' Name='DevExpress.Xpf.Diagram.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Xpf.Diagram.v19.1.dll' KeyPath = 'yes' />
+			</Component>
+			<Component Id='DevExpress.Xpf.Scheduler.v19.1' Guid='{D008C9BE-2E66-4294-94C9-CB9FEF664064}'>
+				<File Id='DevExpress.Xpf.Scheduler.v19.1' Name='DevExpress.Xpf.Scheduler.v19.1.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.Xpf.Scheduler.v19.1.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='DevExpress.XtraScheduler.v19.1.Core' Guid='{AAB4E6B3-4FCF-4D0F-95D6-6C4AFFA75D30}'>
+				<File Id='DevExpress.XtraScheduler.v19.1.Core.dll' Name='DevExpress.XtraScheduler.v19.1.Core.dll' DiskId='3' Source='../../Lib/DevExpress/DevExpress.XtraScheduler.v19.1.Core.dll' KeyPath='yes' />
+			</Component>
+
+			<!--END DEVEXPRESS-->
+
+			<!--BEGIN Mongo-->
+			<Component Id='MongoDB.Bson' Guid='{C61A0912-0E2D-4945-8D2E-BFB42B4C9102}'>
+				<File Id='MongoDB.Bson' Name='MongoDB.Bson.dll' DiskId='6' Source='../../Lib/MongoDB.Bson.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='MongoDB.Driver.Core' Guid='{6CBC6469-DF96-4515-B434-482A94175F4B}'>
+				<File Id='MongoDB.Driver.Core' Name='MongoDB.Driver.Core.dll' DiskId='6' Source='../../Lib/MongoDB.Driver.Core.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='MongoDB.Driver' Guid='{A079D3B7-9AF6-4FD3-80F3-F042B1F21735}'>
+				<File Id='MongoDB.Driver' Name='MongoDB.Driver.dll' DiskId='6' Source='../../Lib/MongoDB.Driver.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='MongoDB.Libmongocrypt' Guid='{98F4797B-4AEA-4DB9-9AD0-B1714FE5EFB6}'>
+				<File Id='MongoDB.Libmongocrypt' Name='MongoDB.Libmongocrypt.dll' DiskId='6' Source='../../Lib/MongoDB.Libmongocrypt.dll' KeyPath='yes' />
+			</Component>
+			<!--END Mongo-->
+
+			<!--BEGIN Ambiguous-->
+			<Component Id='DnsClient' Guid='{770A9D8D-8840-4911-8268-74C40089A8DA}'>
+				<File Id='DnsClient' Name='DnsClient.dll' DiskId='6' Source='../../Lib/DnsClient.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='SharpCompress' Guid='{65A13616-8308-4445-A307-812E7515C3E9}'>
+				<File Id='SharpCompress' Name='SharpCompress.dll' DiskId='6' Source='../../Lib/SharpCompress.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='Snappy.NET' Guid='{A74DFA0F-EF8C-4628-A772-FA2E484BFB3C}'>
+				<File Id='Snappy.NET' Name='Snappy.NET.dll' DiskId='6' Source='../../Lib/Snappy.NET.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='Crc32C.NET' Guid='{20096800-8C27-460F-A5AE-9A7AB3B4207A}'>
+				<File Id='Crc32C.NET' Name='Crc32C.NET.dll' DiskId='6' Source='../../Lib/Crc32C.NET.dll' KeyPath='yes' />
+			</Component>
+			<!--END Ambiguous-->
+
+		</ComponentGroup>
+	</Fragment>
+</Wix>

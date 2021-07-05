@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <ComponentGroup Id="ICompareComponents" Directory="ICOMPAREINSTALLFOLDER">
+      <Component Id='ICompare.Business.AllocationServer.dll' Guid='139e9492-2a7e-41b7-a96f-3a5a4db9b5f7'>
+        <File Id='ICompare.Business.AllocationServer.dll' Name='ICompare.Business.AllocationServer.dll' DiskId='5' Source='../../ICompare/Test/ICompare.Test.AllocationEngineConsole/bin/Release/ICompare.Business.AllocationServer.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.Business.dll' Guid='fd7cb9f1-3f47-40da-b95f-b04d1dd08293'>
+        <File Id='ICompare.Business.dll' Name='ICompare.Business.dll' DiskId='5' Source='../../ICompare/Test/ICompare.Test.ValidationEngineConsole/bin/Release/ICompare.Business.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.Business.MatchingServer.dll' Guid='96edd5db-c06d-4c68-a433-8fdcd4b9582a'>
+        <File Id='ICompare.Business.MatchingServer.dll' Name='ICompare.Business.MatchingServer.dll' DiskId='5' Source='../../ICompare/Test/ICompare.Test.ValidationEngineConsole/bin/Release/ICompare.Business.MatchingServer.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.Business.Observer.dll' Guid='81c2b919-147c-42b1-8c23-2b5b2120f3ac'>
+        <File Id='ICompare.Business.Observer.dll' Name='ICompare.Business.Observer.dll' DiskId='5' Source='../../ICompare/Test/ICompare.Test.AllocationEngineConsole/bin/Release/ICompare.Business.Observer.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.Business.TransformationServer.dll' Guid='7d463084-a00f-48dc-94e2-ade1e70169ae'>
+        <File Id='ICompare.Business.TransformationServer.dll' Name='ICompare.Business.TransformationServer.dll' DiskId='5' Source='../../ICompare/Test/ICompare.Test.DataTransformerConsole/bin/Release/ICompare.Business.TransformationServer.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.Business.ValidationRules.dll' Guid='272f640d-4d98-43f0-b1fe-5f500c25aa34'>
+        <File Id='ICompare.Business.ValidationRules.dll' Name='ICompare.Business.ValidationRules.dll' DiskId='5' Source='../../ICompare/Test/ICompare.Test.ValidationEngineConsole/bin/Release/ICompare.Business.ValidationRules.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.Data.ApplicationServices.dll' Guid='f0972ff4-b629-43e3-97e1-313198ed99ff'>
+        <File Id='ICompare.Data.ApplicationServices.dll' Name='ICompare.Data.ApplicationServices.dll' DiskId='5' Source='../../ICompare/Test/ICompare.Test.ValidationEngineConsole/bin/Release/ICompare.Data.ApplicationServices.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.Data.dll' Guid='d4d4514a-7f24-42ad-bc65-e95d12a3fce1'>
+        <File Id='ICompare.Data.dll' Name='ICompare.Data.dll' DiskId='5' Source='../../ICompare/Test/ICompare.Test.ValidationEngineConsole/bin/Release/ICompare.Data.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.Data.Eventing.dll' Guid='7810cff2-1bff-4273-acad-3c365752136c'>
+        <File Id='ICompare.Data.Eventing.dll' Name='ICompare.Data.Eventing.dll' DiskId='5' Source='../../ICompare/Test/ICompare.Test.ValidationEngineConsole/bin/Release/ICompare.Data.Eventing.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.Data.Operations.dll' Guid='34810e8d-cf70-41d0-b15b-d59b709f1a29'>
+        <File Id='ICompare.Data.Operations.dll' Name='ICompare.Data.Operations.dll' DiskId='5' Source='../../ICompare/Test/ICompare.Test.ValidationEngineConsole/bin/Release/ICompare.Data.Operations.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.Data.Security.dll' Guid='c0308bbc-b549-4d52-827b-686377b5270a'>
+        <File Id='ICompare.Data.Security.dll' Name='ICompare.Data.Security.dll' DiskId='5' Source='../../ICompare/Test/ICompare.Test.ValidationEngineConsole/bin/Release/ICompare.Data.Security.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.Data.Session.dll' Guid='58620733-fd06-449a-9b6b-7fa3418ce150'>
+        <File Id='ICompare.Data.Session.dll' Name='ICompare.Data.Session.dll' DiskId='5' Source='../../ICompare/Test/ICompare.Test.ValidationEngineConsole/bin/Release/ICompare.Data.Session.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.Data.Specialized.dll' Guid='55b4de93-cf8c-4718-97ce-6c7eb19bdb58'>
+        <File Id='ICompare.Data.Specialized.dll' Name='ICompare.Data.Specialized.dll' DiskId='5' Source='../../ICompare/Test/ICompare.Test.ValidationEngineConsole/bin/Release/ICompare.Data.Specialized.dll' KeyPath='yes' />
+      </Component>      
+    </ComponentGroup>
+	</Fragment>
+</Wix>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="FluidComponents" Directory="FLUIDINSTALLFOLDER">
+
+      <Component Id='Fluid.Business.Data.dll' Guid='{34a47d03-740a-4851-add4-cec676936e18}'>
+        <File Id='Fluid.Business.Data.dll' Name='Fluid.Business.Data.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.Business.Data.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.Business.DataServer.dll' Guid='{2bca2542-e39e-4de9-bc44-8b7767ff36fa}'>
+        <File Id='Fluid.Business.DataServer.dll' Name='Fluid.Business.DataServer.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.Business.DataServer.dll' KeyPath = 'yes' />
+      </Component>
+      
+      <Component Id='Fluid.Business.dll' Guid='{d91ac0e7-ecfa-4a3a-8d47-0dc526f74989}'>
+        <File Id='Fluid.Business.dll' Name='Fluid.Business.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.Business.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.Business.MatchingServer.dll' Guid='{002808b6-3daf-4e2e-b6d3-18dce52c863f}'>
+        <File Id='Fluid.Business.MatchingServer.dll' Name='Fluid.Business.MatchingServer.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.Business.MatchingServer.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.Business.ProcessLib.dll' Guid='{23e2251f-bc61-48a5-b28f-28b692d1bf2a}'>
+        <File Id='Fluid.Business.ProcessLib.dll' Name='Fluid.Business.ProcessLib.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.Business.ProcessLib.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.Business.Scheduler.dll' Guid='{58811c48-e184-459f-a81d-46918a753d67}'>
+        <File Id='Fluid.Business.Scheduler.dll' Name='Fluid.Business.Scheduler.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.Business.Scheduler.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Fluid.Business.Enrichment.dll' Guid='{896529CD-B7A9-48BA-A2A8-84A65C22A99C}'>
+        <File Id='Fluid.Business.Enrichment.dll' Name='Fluid.Business.Enrichment.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.Business.Enrichment.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Fluid.Business.Validation.dll' Guid='{3AD8DCCA-77A2-4902-8828-D60C0B15C68A}'>
+        <File Id='Fluid.Business.Validation.dll' Name='Fluid.Business.Validation.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.Business.Validation.dll' KeyPath = 'yes' />
+      </Component>
+      
+      <Component Id='Fluid.UI.Components.NavigatorTreeControl.dll' Guid='{1ae3ee86-ade7-45e6-8b04-172035c4d0f8}'>
+        <File Id='Fluid.UI.Components.NavigatorTreeControl.dll' Name='Fluid.UI.Components.NavigatorTreeControl.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Components.NavigatorTreeControl.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Components.ScheduleControl.dll' Guid='{d8801281-f526-4271-8436-c75385cb669f}'>
+        <File Id='Fluid.UI.Components.ScheduleControl.dll' Name='Fluid.UI.Components.ScheduleControl.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Components.ScheduleControl.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Components.SetupViewControl.dll' Guid='{FF15B1DF-239A-4C9B-BA29-34C75F5C9176}'>
+        <File Id='Fluid.UI.Components.SetupViewControl.dll' Name='Fluid.UI.Components.SetupViewControl.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Components.SetupViewControl.dll' KeyPath = 'yes' />
+      </Component>
+      
+      <Component Id='Fluid.UI.Components.WorkflowToolbarControl.dll' Guid='{BC162CD5-3893-48DE-9D1A-43CF570DD2B0}'>
+        <File Id='Fluid.UI.Components.WorkflowToolbarControl.dll' Name='Fluid.UI.Components.WorkflowToolbarControl.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Components.WorkflowToolbarControl.dll' KeyPath = 'yes' />
+      </Component>
+      
+      <Component Id='Fluid.UI.Components.ConsoleControl.dll' Guid='{9C6AD1B7-7C7C-45AB-8B13-967CED773957}'>
+        <File Id='Fluid.UI.Components.ConsoleControl.dll' Name='Fluid.UI.Components.ConsoleControl.dll' DiskId='4' Source='../../Fluid/UI/Components/Fluid.UI.Components.ConsoleControl/bin/Release/Fluid.UI.Components.ConsoleControl.dll' KeyPath = 'yes' />
+      </Component>
+      
+      <Component Id='Fluid.UI.Components.SelectionGridControl.dll' Guid='{079d3f9c-5082-4015-9036-2bd5dcd5fc69}'>
+        <File Id='Fluid.UI.Components.SelectionGridControl.dll' Name='Fluid.UI.Components.SelectionGridControl.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Components.SelectionGridControl.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Fluid.UI.Components.ValidationFormControl.dll' Guid='{EF996270-B255-4580-A894-F0AA12B3B2F8}'>
+        <File Id='Fluid.UI.Components.ValidationFormControl.dll' Name='Fluid.UI.Components.ValidationFormControl.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Components.ValidationFormControl.dll' KeyPath = 'yes' />
+      </Component>
+      
+      <Component Id='Fluid.UI.Resources.dll' Guid='{e1d4b600-12bb-4d0d-9e2a-424b2908528d}'>
+        <File Id='Fluid.UI.Resources.dll' Name='Fluid.UI.Resources.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Resources.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.AccountingDataAggregator2.dll' Guid='{ee5ba858-3096-49e4-9d41-354764972fbd}'>
+        <File Id='Fluid.UI.Views.AccountingDataAggregator2.dll' Name='Fluid.UI.Views.AccountingDataAggregator2.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.AccountingDataAggregator2.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.AccountingMap.dll' Guid='{4484442b-16e5-4d0b-8176-8534fba34a95}'>
+        <File Id='Fluid.UI.Views.AccountingMap.dll' Name='Fluid.UI.Views.AccountingMap.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.AccountingMap.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.AccountingPeriod.dll' Guid='{81B8ACE9-BC17-4778-BA3E-937A02ACB90A}'>
+        <File Id='Fluid.UI.Views.AccountingPeriod.dll' Name='Fluid.UI.Views.AccountingPeriod.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.AccountingPeriod.dll' KeyPath = 'yes' />
+      </Component>
+      <!--<Component Id='Fluid.UI.Views.AccountingPeriodManager.dll' Guid='{f8390dc4-b476-4221-bd8e-b39cec047142}'>
+        <File Id='Fluid.UI.Views.AccountingPeriodManager.dll' Name='Fluid.UI.Views.AccountingPeriodManager.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.AccountingPeriodManager.dll' KeyPath = 'yes' />
+      </Component>-->
+      <Component Id='Fluid.UI.Views.AccountingTrialBalance.dll' Guid='{45adb13e-03fd-45b5-8100-8d821defa993}'>
+        <File Id='Fluid.UI.Views.AccountingTrialBalance.dll' Name='Fluid.UI.Views.AccountingTrialBalance.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.AccountingTrialBalance.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.Authenticate.dll' Guid='{89D91C72-E4F5-4911-81F2-9E40C73D8A36}'>
+        <File Id='Fluid.UI.Views.Authenticate.dll' Name='Fluid.UI.Views.Authenticate.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.Authenticate.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Fluid.UI.Views.CostCentre.dll' Guid='{43FCCD43-3717-4119-BBF0-E10BBBCB77A0}'>
+        <File Id='Fluid.UI.Views.CostCentre.dll' Name='Fluid.UI.Views.CostCentre.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.CostCentre.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Fluid.UI.Views.ContinuumProcessFlowDesigner.dll' Guid='{7BB3DFF5-27DA-4124-A210-DDC3D81FE1E2}'>
+        <File Id='Fluid.UI.Views.ContinuumProcessFlowDesigner.dll' Name='Fluid.UI.Views.ContinuumProcessFlowDesigner.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.ContinuumProcessFlowDesigner.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Fluid.UI.Views.GLAccountPeriod.dll' Guid='{5D652A00-E176-4DDD-82D4-9BEA3C1C4462}'>
+        <File Id='Fluid.UI.Views.GLAccountPeriod.dll' Name='Fluid.UI.Views.GLAccountPeriod.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.GLAccountPeriod.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='ExcelDataReader.DataSet.dll' Guid='{0F5A8891-1CF3-4DE1-BC98-FAB0E0B69062}'>
+        <File Id='ExcelDataReader.DataSet.dll' Name='ExcelDataReader.DataSet.dll' DiskId='4' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release//ExcelDataReader.DataSet.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ExcelDataReader.dll' Guid='{0244E448-6B3D-4486-B1A2-338627661067}'>
+        <File Id='ExcelDataReader.dll' Name='ExcelDataReader.dll' DiskId='4' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release//ExcelDataReader.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Fluid.UI.Views.DataAccess.dll' Guid='{54d0174f-0c56-4fc0-8e61-c4654c0e8f75}'>
+        <File Id='Fluid.UI.Views.DataAccess.dll' Name='Fluid.UI.Views.DataAccess.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.DataAccess.dll' KeyPath = 'yes' />
+      </Component>
+      
+      <Component Id='Fluid.UI.Views.DataTransformer3.dll' Guid='{73b097fa-974d-43d7-93ee-2b9242cd9ad3}'>
+        <File Id='Fluid.UI.Views.DataTransformer3.dll' Name='Fluid.UI.Views.DataTransformer3.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.DataTransformer3.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Fluid.UI.Views.GLAccountSetup.dll' Guid='{F64A46DF-AD7D-49F6-9220-986FE0C69487}'>
+        <File Id='Fluid.UI.Views.GLAccountSetup.dll' Name='Fluid.UI.Views.GLAccountSetup.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.GLAccountSetup.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Fluid.UI.Views.GLManualJournalDetail.dll' Guid='{B9D3CC9E-12E1-4795-9A29-A74386B3CBD2}'>
+        <File Id='Fluid.UI.Views.GLManualJournalDetail.dll' Name='Fluid.UI.Views.GLManualJournalDetail.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.GLManualJournalDetail.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Fluid.UI.Views.ManualJournalCapture.dll' Guid='{D48F8B58-93B9-4E23-8BC8-75B91FE364DF}'>
+        <File Id='Fluid.UI.Views.ManualJournalCapture.dll' Name='Fluid.UI.Views.ManualJournalCapture.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.ManualJournalCapture.dll' KeyPath = 'yes' />
+      </Component>
+
+      <!--<Component Id='Fluid.UI.Views.AuditLogViewer.dll' Guid='{387ED12E-2A0E-4109-B162-3E6D3F2B88C1}'>
+        <File Id='Fluid.UI.Views.AuditLogViewer.dll' Name='Fluid.UI.Views.AuditLogViewer.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.AuditLogViewer.dll' KeyPath = 'yes' />
+      </Component>-->
+      
+      <Component Id='Fluid.UI.Views.Help.dll' Guid='{15708c1e-6539-4915-a028-f23eb01f9db4}'>
+        <File Id='Fluid.UI.Views.Help.dll' Name='Fluid.UI.Views.Help.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.Help.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.MessageDetailsPanel.dll' Guid='{e7796f9f-81f7-4417-ab74-eb71bf06c595}'>
+        <File Id='Fluid.UI.Views.MessageDetailsPanel.dll' Name='Fluid.UI.Views.MessageDetailsPanel.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.MessageDetailsPanel.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.MessagePanel.dll' Guid='{12bb3d17-0890-4fc8-ab09-18ff5774e698}'>
+        <File Id='Fluid.UI.Views.MessagePanel.dll' Name='Fluid.UI.Views.MessagePanel.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.MessagePanel.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.MatchingRule.dll' Guid='{C328B162-47F0-40BF-8E44-E7FE0DC43826}'>
+        <File Id='Fluid.UI.Views.MatchingRule.dll' Name='Fluid.UI.Views.MatchingRule.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.MatchingRule.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.News.dll' Guid='{4e8ebb89-c1c1-4e06-9ce9-739675b11776}'>
+        <File Id='Fluid.UI.Views.News.dll' Name='Fluid.UI.Views.News.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.News.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.ProcessFlowManager2.dll' Guid='{644dbaa8-1d9b-40ff-85de-d728fb878a22}'>
+        <File Id='Fluid.UI.Views.ProcessFlowManager2.dll' Name='Fluid.UI.Views.ProcessFlowManager2.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.ProcessFlowManager2.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.ViewContainer.dll' Guid='{1ddee605-4780-4784-9c8d-f6a1d7eafb32}'>
+        <File Id='Fluid.UI.Views.ViewContainer.dll' Name='Fluid.UI.Views.ViewContainer.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.ViewContainer.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.AutoRulesManager.dll' Guid='{C6CEEA1B-A770-4B85-A9D9-11466ECAAFE5}'>
+        <File Id='Fluid.UI.Views.AutoRulesManager.dll' Name='Fluid.UI.Views.AutoRulesManager.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.AutoRulesManager.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.TemplateExportManager.dll' Guid='{5A437C69-A79C-4986-89D5-C70307F33CFB}'>
+        <File Id='Fluid.UI.Views.TemplateExportManager.dll' Name='Fluid.UI.Views.TemplateExportManager.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.TemplateExportManager.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.Dashboard.dll' Guid='{BE3DF38E-317F-4ABE-B7B3-9906C40FED76}'>
+        <File Id='Fluid.UI.Views.Dashboard.dll' Name='Fluid.UI.Views.Dashboard.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.Dashboard.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.MatchgroupRuleManagement.dll' Guid='{151B5285-FD0A-45F5-85DA-3B0ACCB194CA}'>
+        <File Id='Fluid.UI.Views.MatchgroupRuleManagement.dll' Name='Fluid.UI.Views.MatchGroupRuleManagement.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.MatchgroupRuleManagement.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Wpf.dll' Guid='{5094ae06-f884-4378-9294-7dc4e91d6ed2}'>
+        <File Id='Fluid.UI.Wpf.dll' Name='Fluid.UI.Wpf.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Wpf.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.ActiveReports.dll' Guid='{FC76B51A-68E9-46EA-BAD5-66FFEA391962}'>
+        <File Id='Fluid.UI.Views.ActiveReports.dll' Name='Fluid.UI.Views.ActiveReports.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.ActiveReports.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.ActiveReporting.dll' Guid='{C499D3E9-597B-4298-8852-617694D3B98F}'>
+        <File Id='Fluid.UI.Views.ActiveReporting.dll' Name='Fluid.UI.Views.ActiveReporting.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.ActiveReporting.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Fluid.UI.Views.Utilities.dll' Guid='{9F4F3747-C3F5-4D57-ACA5-AEFB2FEB9B14}'>
+        <File Id='Fluid.UI.Views.Utilities.dll' Name='Fluid.UI.Views.Utilities.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.Utilities.dll' KeyPath = 'yes' />
+      </Component>
+      
+      <Component Id='Fluid.UI.Views.YearEndManager.dll' Guid='{2BBB6CD1-F67D-43A9-81A5-A7350F19325D}'>
+        <File Id='Fluid.UI.Views.YearEndManager.dll' Name='Fluid.UI.Views.YearEndManager.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.YearEndManager.dll' KeyPath = 'yes' />
+      </Component>
+      <!--<Component Id='Fluid.UI.Views.AccountingPeriodManager.dll' Guid='{9488A87F-45B5-48D5-8E6E-8CD457EF86F0}'>
+        <File Id='Fluid.UI.Views.AccountingPeriodManager.dll' Name='Fluid.UI.Views.AccountingPeriodManager.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.AccountingPeriodManager.dll' KeyPath = 'yes' />
+      </Component>-->
+
+      <Component Id='Fluid.UI.Views.KineticProcessFlowDesigner.dll' Guid='{25D78970-C091-4F64-9E83-30EEE05B5242}'>
+        <File Id='Fluid.UI.Views.KineticProcessFlowDesigner.dll' Name='Fluid.UI.Views.KineticProcessFlowDesigner.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.KineticProcessFlowDesigner.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Fluid.Business.MSLib' Guid='{6042EA12-623C-4EDE-AC57-88B562480979}'>
+        <File Id='Fluid.Business.MSLib' Name='Fluid.Business.MSLib.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.Business.MSLib.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Oracle.ManagedDataAccess.dll' Guid='{90ADD19F-1B80-4D87-B3DF-BD6B7E827AEE}'>
+        <File Id='Oracle.ManagedDataAccess.dll' Name='Oracle.ManagedDataAccess.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Oracle.ManagedDataAccess.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Fluid.UI.Components.FileSystemComponents.dll' Guid='{E2411327-5490-4FC1-B243-27823D80B4B9}'>
+        <File Id='Fluid.UI.Components.FileSystemComponents.dll' Name='Fluid.UI.Components.FileSystemComponents.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Components.FileSystemComponents.dll' KeyPath = 'yes' />
+      </Component>
+
+		<Component Id='Fluid.UI.Views.AuditLogViewer.dll' Guid='{68CEC3FC-F1B0-4567-826E-7C9D3C58045F}'>
+			<File Id='Fluid.UI.Views.AuditLogViewer.dll' Name='Fluid.UI.Views.AuditLogViewer.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.AuditLogViewer.dll' KeyPath = 'yes' />
+		</Component>
+      <Component Id='Fluid.UI.Views.TableViewer.dll' Guid='{F6AE239F-CD90-4592-9937-59EE728CBC8D}'>
+        <File Id='Fluid.UI.Views.TableViewer.dll' Name='Fluid.UI.Views.TableViewer.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.TableViewer.dll' KeyPath = 'yes' />
+      </Component>
+      <!--<Component Id='Continuum.Business.DataMorphing.dll' Guid='{E130E6F3-7D87-4318-912B-E639C51D3DAF}'>
+        <File Id='Continuum.Business.DataMorphing' Name='Continuum.Business.DataMorphing.dll' DiskId='4' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Continuum.Business.DataMorphing.dll' KeyPath = 'yes' />
+      </Component>-->
+      
+      <!--<Component Id='ICompareCore.Business.Accounting' Guid='{8D05B14F-23C6-4C29-861E-23CCA929CDEB}'>
+        <File Id='ICompareCore.Business.Accounting' Name='ICompareCore.Business.Accounting.dll' DiskId='4' Source='../../ICompareCore/Business/ICompareCore.Business.Accounting/bin/Release/ICompareCore.Business.Accounting.dll' KeyPath = 'yes' />
+      </Component>-->
+
+      <Component Id='UnidecodeSharpFork' Guid='{D0CF8E1C-854B-48D2-B7EE-A912457A8C53}'>
+        <File Id='UnidecodeSharpFork.dll' Name='UnidecodeSharpFork.dll' DiskId='4' Source='../../Fluid/Business/Fluid.Business.DataServer/bin/Release/UnidecodeSharpFork.dll' KeyPath='yes'>
+        </File>
+      </Component>
+      
+    </ComponentGroup>
+
+    <Feature Id='Fluid' Level='2'>
+      <ComponentRef Id='Fluid.UI.Shell' />
+    </Feature>
+
+  </Fragment>
+</Wix>

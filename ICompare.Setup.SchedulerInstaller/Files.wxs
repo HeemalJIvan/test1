@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <?include $(var.ProjectDir)\Variables.wxi ?>
+  <Fragment>
+    <ComponentGroup Id="PostInstallerComponents" Directory="APPLICATIONFOLDER">
+      <Component Id='ICompare.Setup.SchedulerPostInstaller' Guid='{E5460606-FE92-4B12-ADFC-939DB603A379}'>
+        <File Id='ICompare.Setup.SchedulerPostInstaller' Name='ICompare.Setup.SchedulerPostInstaller.exe' DiskId='1' Source='../../Setup/ICompare.Setup.SchedulerPostInstaller/bin/Release/ICompare.Setup.SchedulerPostInstaller.exe' KeyPath = 'yes'>
+        </File>
+      </Component>
+      <Component Id='ICompare.Setup.SchedulerPostInstaller.exe.config' Guid='{F60E133A-7D80-49E2-B0EC-24A1CE6BBF4A}'>
+        <File Id='ICompare.Setup.SchedulerPostInstaller.exe.config' Name='ICompare.Setup.SchedulerPostInstaller.exe.config' DiskId='1' Source='../../Setup/ICompare.Setup.SchedulerPostInstaller/bin/Release/ICompare.Setup.SchedulerPostInstaller.exe.config' KeyPath = 'yes'>
+        </File>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="SchedulerServiceComponents" Directory="SchedulerServiceFolder">
+      <Component Id="SchedulerServiceExecutable" Guid="$(var.SCHEDULERSERVICEUID)">
+        <File Id="Fluid.Business.SchedulerService.exe" Name="Fluid.Business.SchedulerService.exe" DiskId="1" Source="../../Fluid/Business/Fluid.Business.SchedulerService/bin/Release/Fluid.Business.SchedulerService.exe" KeyPath="yes" />
+        <ServiceInstall
+					Id="ServiceInstaller"
+					Type="ownProcess"
+					Name="$(var.SERVICENAME)"
+					DisplayName="$(var.PRODUCT)"
+					Description="$(var.PRODUCT)"
+					Start="demand"
+					ErrorControl="normal"
+				/>
+        <ServiceControl Id="SchedulerService" Stop="both" Remove="uninstall" Name="$(var.SERVICENAME)" Wait="yes" />
+
+        <RegistryKey Id='ICompareRegInstallDir' Root='HKLM' Key='Software\[Manufacturer]\[ProductName]' ForceCreateOnInstall='yes' ForceDeleteOnUninstall='yes'>
+          <RegistryValue Type='string' Name='AppPath' Value='[TARGETDIR]'/>
+          <RegistryValue Type='string' Name='InstallDir' Value='TBA' />
+          <RegistryValue Type='string' Name='DataAggregatorFolderDir' Value='[TARGETDIR]\[DOORWAY]\[APPLICATIONFOLDER]\[DataAggregatorFolder]' />
+        </RegistryKey>
+      </Component>
+
+      <Component Id='Synapse.Business.SynapseKineticAgent.Service.config' Guid='{3527DD52-64C2-4021-9306-EB8AA38C53B9}'>
+        <File Id='Synapse.Business.SynapseKineticAgent.Service.config' Name='Synapse.Business.SynapseKineticAgent.exe.config' DiskId='1' Source='../../Lib/SynapseKinetic/Synapse.Business.SynapseKineticAgent.exe.Service.config' KeyPath = 'yes'/>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    
+    <ComponentGroup Id="ProductComponents" Directory="SchedulerConsoleFolder">
+      <Component Id='Fluid.UI.Views.ActiveReporting' Guid='{7CAA26CF-A618-4CE0-9B32-5BA0C23DDEB9}'>
+      <File Id='Fluid.UI.Views.ActiveReporting' Name='Fluid.UI.Views.ActiveReporting.dll' DiskId='1' Source='../../Fluid/Business/Fluid.Business.ProcessLib/bin/Release/Fluid.UI.Views.ActiveReporting.dll' KeyPath='yes'>
+        <CopyFile Id='Fluid.UI.Views.ActiveReporting' DestinationDirectory='SchedulerServiceFolder' />
+      </File>
+    </Component>
+      <Component Id='Fluid.Test.SchedulerConsole' Guid='{aa7cd9fa-7f6d-4b5d-91f4-9dde9d107ce2}'>
+        <File Id='Fluid.Test.SchedulerConsole' Name='Fluid.Test.SchedulerConsole.exe' DiskId='1' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release/Fluid.Test.SchedulerConsole.exe' KeyPath = 'yes'>
+        </File>
+      </Component>
+      <Component Id='fluid.business.data' Guid='{AFFDCC8D-1F3A-47F8-8B36-611A574AFE97}'>
+        <File Id='fluid.business.data' Name='fluid.business.data.dll'  DiskId='1' Source='../../ICompareCore/Business/Fluid.Business.Data/bin/Release/Fluid.Business.Data.dll' KeyPath = 'yes' >
+          <CopyFile Id='Fluid.Business.Data' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Fluid.Business.DataServer' Guid='{975d9306-1c62-4709-a573-5f6101f21fb4}'>
+        <File Id='Fluid.Business.DataServer' Name='Fluid.Business.DataServer.dll' DiskId='1' Source='../../Fluid/Business/Fluid.Business.DataServer/bin/Release/Fluid.Business.DataServer.dll' KeyPath = 'yes' >
+          <CopyFile Id='Fluid.Business.DataServer' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='ICompareCore.Business.Servers' Guid='{8DED5642-43AA-4438-A2A8-C1880ADDB6A7}'>
+        <File Id='ICompareCore.Business.Servers' Name='ICompareCore.Business.Servers.dll' DiskId='1' Source='../../ICompareCore/Business/ICompareCore.Business.Servers/bin/Release/ICompareCore.Business.Servers.dll' KeyPath = 'yes' >
+          <CopyFile Id='ICompareCore.Business.Servers' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      
+      <Component Id='ICompareCore.Business.Accounting.dll' Guid='{1962385B-591C-43E4-9218-D1620A3070B8}'>
+        <File Id='ICompareCore.Business.Accounting.dll' Name='ICompareCore.Business.Accounting.dll' DiskId='1' Source='../../ICompareCore/Business/ICompareCore.Business.Accounting/bin/Release/ICompareCore.Business.Accounting.dll' KeyPath='yes'>
+          <CopyFile Id='ICompareCore.Business.Accounting' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      
+      <Component Id='ICompareCore.Business.dll' Guid='{14BB3694-C17F-41B1-A10C-859016FD1F9A}'>
+        <File Id='ICompareCore.Business.dll' Name='ICompareCore.Business.dll' DiskId='1' Source='../../ICompareCore/Business/ICompareCore.Business/bin/Release/ICompareCore.Business.dll' KeyPath='yes'>
+          <CopyFile Id='ICompareCore.Business' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+
+      <Component Id='Continuum.Business.Data' Guid='{C074608E-2593-4BBD-A94F-5EA0418E98FE}'>
+        <File Id='Continuum.Business.Data' Name='Continuum.Business.Data.dll' DiskId='1' Source='../../Lib/Continuum.Business.Data.dll' KeyPath = 'yes' >
+          <CopyFile Id='Continuum.Business.Data' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+
+      <Component Id='Continuum.Business' Guid='{E8D0D8A4-CF82-4F54-A75E-56EDF1025516}'>
+        <File Id='Continuum.Business' Name='Continuum.Business.dll' DiskId='1' Source='../../Lib/Continuum.Business.dll' KeyPath = 'yes' >
+          <CopyFile Id='Continuum.Business' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+
+      <Component Id='Continuum.Business.DataProviders' Guid='{1148A966-795B-4B45-B579-08C0C10E1D65}'>
+        <File Id='Continuum.Business.DataProviders' Name='Continuum.Business.DataProviders.dll' DiskId='1' Source='../../Lib/Continuum.Business.DataProviders.dll' KeyPath = 'yes' >
+          <CopyFile Id='Continuum.Business.DataProviders' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+
+      <Component Id='Continuum.Business.Kinetic' Guid='{6D2F574D-87A9-4404-A55F-7A25251C0093}'>
+        <File Id='Continuum.Business.Kinetic' Name='Continuum.Business.Kinetic.dll' DiskId='1' Source='../../Lib/Continuum.Business.Kinetic.dll' KeyPath = 'yes' >
+          <CopyFile Id='Continuum.Business.Kinetic' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      
+      <Component Id='Continuum.Business.DataMorphing' Guid='{7B28D196-6458-4721-8AA1-D256B9164042}'>
+        <File Id='Continuum.Business.DataMorphing' Name='Continuum.Business.DataMorphing.dll' DiskId='1' Source='../../Lib/Continuum.Business.DataMorphing.dll' KeyPath = 'yes' >
+          <CopyFile Id='Continuum.Business.DataMorphing' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+
+      <Component Id='Continuum.Business.Raptor' Guid='{F99F5E5F-94CF-42D7-B7ED-B4E4DA7FAAF2}'>
+        <File Id='Continuum.Business.Raptor' Name='Continuum.Business.Raptor.dll' DiskId='1' Source='../../Lib/Continuum.Business.Raptor.dll' KeyPath = 'yes' >
+          <CopyFile Id='Continuum.Business.Raptor' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+
+      <Component Id='Fluid.Business' Guid='{664d1546-1451-4bbf-b9e3-2704d63a6a8d}'>
+        <File Id='Fluid.Business' Name='Fluid.Business.dll' DiskId='1' Source='../../Fluid/Business/Fluid.Business.DataServer/bin/Release/Fluid.Business.dll' KeyPath = 'yes'>
+          <CopyFile Id='Fluid.Business' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Fluid.Business.Scheduler' Guid='{d16e193b-d0d2-424b-b7fe-1de70c7ba4af}'>
+        <File Id='Fluid.Business.Scheduler' Name='Fluid.Business.Scheduler.dll' DiskId='1' Source='../../Fluid/Business/Fluid.Business.Scheduler/bin/Release/Fluid.Business.Scheduler.dll' KeyPath = 'yes'>
+          <CopyFile Id='Fluid.Business.Scheduler' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Fluid.Business.ProcessLib' Guid='{7D0B8EDE-76AE-40A3-B4A8-A55A7133B1AD}'>
+        <File Id='Fluid.Business.ProcessLib' Name='Fluid.Business.ProcessLib.dll' DiskId='1' Source='../../Fluid/Business/Fluid.Business.ProcessLib/bin/Release/Fluid.Business.ProcessLib.dll' KeyPath = 'yes'>
+          <CopyFile Id='Fluid.Business.ProcessLib' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      
+      <Component Id='Fluid.UI.Views.KineticProcessFlowDesigner' Guid='{59AAD044-C933-4980-B85C-B41CD9DF9C08}'>
+        <File Id='Fluid.UI.Views.KineticProcessFlowDesigner' Name='Fluid.UI.Views.KineticProcessFlowDesigner.dll' DiskId='1' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Views.KineticProcessFlowDesigner.dll' KeyPath = 'yes'>
+          <CopyFile Id='Fluid.UI.Views.KineticProcessFlowDesigner' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      
+      <Component Id='Fluid.UI.Wpf' Guid='{df0b183a-2495-4aa0-b77d-5b72b30d6493}'>
+        <File Id='Fluid.UI.Wpf' Name='Fluid.UI.Wpf.dll' DiskId='1' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.UI.Wpf.dll' KeyPath = 'yes'>
+          <CopyFile Id='Fluid.UI.Wpf' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.Business' Guid='{7ee57fbf-03d5-442b-b911-20be87f424af}'>
+        <File Id='FusionXC.Business' Name='FusionXC.Business.dll' DiskId='1' Source='../../Lib/FusionXC.Business.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Business' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.Data.Calculator' Guid='{63b078bc-5b0e-484f-bc31-b2e722ce3797}'>
+        <File Id='FusionXC.Data.Calculator' Name='FusionXC.Data.Calculator.dll' DiskId='1' Source='../../Lib/FusionXC.Data.Calculator.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Data.Calculator' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.Data.DBGenerator' Guid='{5f6cb8bd-1fb3-46e7-933d-e653e3c2f571}'>
+        <File Id='FusionXC.Data.DBGenerator' Name='FusionXC.Data.DBGenerator.dll' DiskId='1' Source='../../Lib/FusionXC.Data.DBGenerator.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Data.DBGenerator' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.Data' Guid='{bc0d73e4-975b-42d9-9574-9672a561a6fd}'>
+        <File Id='FusionXC.Data' Name='FusionXC.Data.dll' DiskId='1' Source='../../Lib/FusionXC.Data.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Data' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.Data.Dynamic' Guid='{3e9f3b98-7545-45d6-9ff9-8f36e0e08165}'>
+        <File Id='FusionXC.Data.Dynamic' Name='FusionXC.Data.Dynamic.dll' DiskId='1' Source='../../Lib/FusionXC.Data.Dynamic.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Data.Dynamic' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.Data.Interactive' Guid='{67e0a6ab-f597-4975-a74c-11c23fa9c32c}'>
+        <File Id='FusionXC.Data.Interactive' Name='FusionXC.Data.Interactive.dll' DiskId='1' Source='../../Lib/FusionXC.Data.Interactive.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Data.Interactive' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.Data.Math' Guid='{3b625212-7764-435f-8715-3190d4dc2092}'>
+        <File Id='FusionXC.Data.Math' Name='FusionXC.Data.Math.dll' DiskId='1' Source='../../Lib/FusionXC.Data.Math.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Data.Math' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.Data.Model' Guid='{6ee433e2-85b1-463a-ad31-ffc762049482}'>
+        <File Id='FusionXC.Data.Model' Name='FusionXC.Data.Model.dll' DiskId='1' Source='../../Lib/FusionXC.Data.Model.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Data.Model' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.Data.Security' Guid='{61798f59-41d3-4225-ab8c-e7ba5b30d875}'>
+        <File Id='FusionXC.Data.Security' Name='FusionXC.Data.Security.dll' DiskId='1' Source='../../Lib/FusionXC.Data.Security.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Data.Security' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.Data.Serialize' Guid='{1b90c0ce-96e4-4325-96f7-ff9826680604}'>
+        <File Id='FusionXC.Data.Serialize' Name='FusionXC.Data.Serialize.dll' DiskId='1' Source='../../Lib/FusionXC.Data.Serialize.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Data.Serialize' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.Data.SuperNova2' Guid='{fc02bb64-b9b1-42a3-b248-77d027318e01}'>
+        <File Id='FusionXC.Data.SuperNova2' Name='FusionXC.Data.SuperNova2.dll' DiskId='1' Source='../../Lib/FusionXC.Data.SuperNova2.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Data.SuperNova2' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.Data.SuperNovaFlight' Guid='{bac1f7b2-208d-4fef-8ca9-483f2f9a2b35}'>
+        <File Id='FusionXC.Data.SuperNovaFlight' Name='FusionXC.Data.SuperNovaFlight.dll' DiskId='1' Source='../../Lib/FusionXC.Data.SuperNovaFlight.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Data.SuperNovaFlight' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+
+      <Component Id='Fluid.Business.Validation.dll' Guid='{1FCE31B4-3B2D-4133-9EFA-DBBD919D81B8}'>
+        <File Id='Fluid.Business.Validation.dll' Name='Fluid.Business.Validation.dll' DiskId='1' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.Business.Validation.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Oracle.ManagedDataAccess.dll' Guid='{7098B359-A293-49A8-AEFA-25A8590A6309}'>
+        <File Id='Oracle.ManagedDataAccess.dll' Name='Oracle.ManagedDataAccess.dll' DiskId='1' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Oracle.ManagedDataAccess.dll' KeyPath = 'yes' />
+      </Component>
+      
+      <Component Id='FusionXC.Data.SynapseX' Guid='{83e016ce-06d8-4693-bbe6-43371be3b817}'>
+        <File Id='FusionXC.Data.SynapseX' Name='FusionXC.Data.SynapseX.dll' DiskId='1' Source='../../Lib/FusionXC.Data.SynapseX.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Data.SynapseX' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.Data.SynapseX.Lib' Guid='{dcb7316d-e510-428f-8094-8fe7afe68a53}'>
+        <File Id='FusionXC.Data.SynapseX.Lib' Name='FusionXC.Data.SynapseX.Lib.dll' DiskId='1' Source='../../Lib/FusionXC.Data.SynapseX.Lib.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.Data.SynapseX.Lib' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='FusionXC.UI.Wpf' Guid='{9a5eb49a-cd14-4847-9e4c-736060b0ba19}'>
+        <File Id='FusionXC.UI.Wpf' Name='FusionXC.UI.Wpf.dll' DiskId='1' Source='../../Lib/FusionXC.UI.Wpf.dll' KeyPath = 'yes'>
+          <CopyFile Id='FusionXC.UI.Wpf' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Synapse.Business.Data' Guid='{3e906feb-9c2d-42a4-8b9d-7f2842a1e581}'>
+        <File Id='Synapse.Business.Data' Name='Synapse.Business.Data.dll' DiskId='1' Source='../../Lib/SynapseKinetic/Synapse.Business.Data.dll' KeyPath = 'yes'>
+          <CopyFile Id='Synapse.Business.Data' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Synapse.Business' Guid='{ce82502a-196f-4b43-9009-cf1b5e041be2}'>
+        <File Id='Synapse.Business' Name='Synapse.Business.dll' DiskId='1' Source='../../Lib/SynapseKinetic/Synapse.Business.dll' KeyPath = 'yes'>
+          <CopyFile Id='Synapse.Business' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Synapse.Business.SynapseKineticAgent' Guid='{de7e5502-100d-4f62-b5f2-efc467be1fa1}'>
+        <File Id='Synapse.Business.SynapseKineticAgent' Name='Synapse.Business.SynapseKineticAgent.exe' DiskId='1' Source='../../Lib/SynapseKinetic/Synapse.Business.SynapseKineticAgent.exe' KeyPath = 'yes'>
+          <CopyFile Id='Synapse.Business.SynapseKineticAgent' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Synapse.Business.SynapseKineticAgent.Config' Guid='{8769EC67-2997-4D57-9A7E-22930D59C099}'>
+        <File Id='Synapse.Business.SynapseKineticAgent.Config' Name='Synapse.Business.SynapseKineticAgent.exe.config' DiskId='1' Source='../../Lib/SynapseKinetic/Synapse.Business.SynapseKineticAgent.exe.Console.config' KeyPath = 'yes'/>
+      </Component>
+      
+      
+      
+      
+      <!--<Component Id='Fluid.Business.ICompareData' Guid='{C4D70084-DC44-4B9F-846A-8B0157CF112C}'>
+        <File Id='Fluid.Business.ICompareData' Name='Fluid.Business.ICompareData.dll' DiskId='1' Source='../../Business/Fluid.Business.ICompareData/bin/Release/Fluid.Business.ICompareData.dll' KeyPath = 'yes'>
+          <CopyFile Id='Fluid.Business.ICompareData' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>-->
+      <!--<Component Id='Fluid.Test.DataAggregatorConsole' Guid='{BBD7B1B9-C0DE-4576-A452-1C172E5F8C16}'>
+        <File Id='Fluid.Test.DataAggregatorConsole' Name='Fluid.Test.DataAggregatorConsole.exe' DiskId='1' Source='../../Test\Fluid.Test.DataAggregatorConsole\bin\Release\Fluid.Test.DataAggregatorConsole.exe' KeyPath = 'yes'>
+          <CopyFile Id='Fluid.Test.DataAggregatorConsole' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Fluid.Test.DataAggregatorConsole.Config' Guid='{6D5F1068-BB37-45D6-B4FE-C507581F31A4}'>
+        <File Id='Fluid.Test.DataAggregatorConsole.Config' Name='Fluid.Test.DataAggregatorConsole.exe.config' DiskId='1' Source='../../Test\Fluid.Test.DataAggregatorConsole\bin\Release\Fluid.Test.DataAggregatorConsole.exe.config' KeyPath = 'yes'>
+          <CopyFile Id='Fluid.Test.DataAggregatorConsole.Config' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>-->
+      <!--<Component Id='Fluid.Business.ICompare' Guid='{B775C99B-E54F-4DE6-9BE8-2048A89E4889}'>
+        <File Id='Fluid.Business.ICompare' Name='Fluid.Business.ICompare.dll' DiskId='1' Source='../../Business/Fluid.Business.ICompareData/bin/Release/Fluid.Business.ICompare.dll' KeyPath='yes'>
+          <CopyFile Id='Fluid.Business.ICompare' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>-->
+      <Component Id='Fluid.Remote.ServiceOperations' Guid='{AD0AA57A-CC9F-4562-9A8A-014053825D1E}'>
+        <File Id='Fluid.Remote.ServiceOperations' Name='Fluid.Business.Services.ServiceOperations.dll' DiskId='1' Source='../../Fluid/Remote/Fluid.Remote.ServiceOperations/bin/Release/Fluid.Remote.ServiceOperations.dll' KeyPath='yes'>
+          <CopyFile Id='Fluid.Remote.ServiceOperations' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+
+      <Component Id='FusionXC.Data.SynapseArchitect' Guid='{9CC1A3FF-1483-455A-9019-773789842166}'>
+        <File Id='FusionXC.Data.SynapseArchitect.dll' Name='FusionXC.Data.SynapseArchitect.dll' DiskId='1' Source='../../Lib/FusionXC.Data.SynapseArchitect.dll' KeyPath='yes'>
+          <CopyFile Id='FusionXC.Data.SynapseArchitect.dll' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='UnidecodeSharpFork' Guid='{E00B84E0-DD3A-40BD-AA56-1704AD6D9CF4}'>
+        <File Id='UnidecodeSharpFork.dll' Name='UnidecodeSharpFork.dll' DiskId='1' Source='../../Fluid/Business/Fluid.Business.DataServer/bin/Release/UnidecodeSharpFork.dll' KeyPath='yes'>
+          <CopyFile Id='UnidecodeSharpFork.dll' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Fluid.Business.MatchingServer' Guid='{1750F036-D8CC-46DB-96CF-26667CDFE079}'>
+        <File Id='Fluid.Business.MatchingServer' Name='Fluid.Business.MatchingServer.dll' DiskId='1' Source='../../Fluid/Business/Fluid.Business.MatchingServer/bin/Release/Fluid.Business.MatchingServer.dll' KeyPath='yes'>
+          <CopyFile Id='Fluid.Business.MatchingServer' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='ExcelDataReader' Guid='{C50B5FCA-A7B6-491E-914E-0BEFC34E46C6}'>
+        <File Id='ExcelDataReader' Name='ExcelDataReader.dll' DiskId='1' Source='../../Fluid/Business/Fluid.Business.DataServer/bin/Release/ExcelDataReader.dll' KeyPath = 'yes'>
+          <CopyFile Id='ExcelDataReader' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='ExcelDataReader.Dataset' Guid='{1F2F395E-F3E7-427B-8117-5FD9D3A55DDB}'>
+        <File Id='ExcelDataReader.Dataset' Name='ExcelDataReader.Dataset.dll' DiskId='1' Source='../../Fluid/Business/Fluid.Business.DataServer/bin/Release/ExcelDataReader.Dataset.dll' KeyPath = 'yes'>
+          <CopyFile Id='ExcelDataReader.Dataset' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Fluid.Business.Enrichment' Guid='{27BC46A5-68EB-4227-8E57-F9C163645D64}'>
+        <File Id='Fluid.Business.Enrichment' Name='Fluid.Business.Enrichment.dll' DiskId='1' Source='../../Fluid/Business/Fluid.Business.DataServer/bin/Release/Fluid.Business.Enrichment.dll' KeyPath = 'yes'>
+          <CopyFile Id='Fluid.Business.Enrichment' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+
+
+      <!--Must be moved to lib-->
+
+
+
+      <!-- Lib -->
+
+      <Component Id='Microsoft.Data.ConnectionUI.Dialog' Guid='{62F0B654-2237-422E-BB03-0A6B3F5685F0}'>
+        <File Id='Microsoft.Data.ConnectionUI.Dialog' Name='Microsoft.Data.ConnectionUI.Dialog.dll' DiskId='2' Source='../../Lib/Microsoft.Data.ConnectionUI.Dialog.dll' KeyPath = 'yes'>
+          <CopyFile Id='Microsoft.Data.ConnectionUI.Dialog' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Microsoft.Data.ConnectionUI' Guid='{F043E887-91D2-44DB-9B1B-9BEB044E6ACB}'>
+        <File Id='Microsoft.Data.ConnectionUI' Name='Microsoft.Data.ConnectionUI.dll' DiskId='2' Source='../../Lib/Microsoft.Data.ConnectionUI.dll' KeyPath = 'yes'>
+          <CopyFile Id='Microsoft.Data.ConnectionUI' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Microsoft.Exchange.WebServices' Guid='{6F5AF680-4CD5-4201-B9E3-E704C8CA75E1}'>
+        <File Id='Microsoft.Exchange.WebServices' Name='Microsoft.Exchange.WebServices.dll' DiskId='2' Source='../../Fluid/Business/Fluid.Business.ProcessLib/bin/Release/Microsoft.Exchange.WebServices.dll' KeyPath = 'yes'>
+          <CopyFile Id='Microsoft.Exchange.WebServices' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <!--<Component Id='Renci.SshNet' Guid='{DDC59EF6-BA24-4053-8B93-67A204790B14}'>
+        <File Id='Renci.SshNet' Name='Renci.SshNet.dll' DiskId='2' Source='../../Lib/Renci.SshNet.dll' KeyPath = 'yes'>
+          <CopyFile Id='Renci.SshNet' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>-->
+      <Component Id='ICSharpCode.SharpZipLib' Guid='{9f63efb5-459f-4e35-b033-c22e6f690ca0}'>
+        <File Id='ICSharpCode.SharpZipLib' Name='ICSharpCode.SharpZipLib.dll' DiskId='2' Source='../../Fluid/Business/Fluid.Business.DataServer/bin/Release/ICSharpCode.SharpZipLib.dll' KeyPath = 'yes'>
+          <CopyFile Id='ICSharpCode.SharpZipLib' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='log4net' Guid='{ec6f026d-bbce-4676-8f2b-592b73312111}'>
+        <File Id='log4net' Name='log4net.dll' DiskId='2' Source='../../Fluid/Business/Fluid.Business.DataServer/bin/Release/log4net.dll' KeyPath = 'yes'>
+          <CopyFile Id='log4net' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Microsoft.CSharp' Guid='{2afccfc7-fa36-4abf-b5c4-953c1efaf34b}'>
+        <File Id='Microsoft.CSharp' Name='Microsoft.CSharp.dll' DiskId='2' Source='../../Fluid/Business/Fluid.Business.DataServer/bin/Release/Microsoft.CSharp.dll' KeyPath = 'yes'>
+          <CopyFile Id='Microsoft.CSharp' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Newtonsoft.Json' Guid='{e9717181-1f42-4616-8b9f-43646f1911f9}'>
+        <File Id='Newtonsoft.Json' Name='Newtonsoft.Json.dll' DiskId='2' Source='../../Fluid/Business/Fluid.Business.DataServer/bin/Release/Newtonsoft.Json.dll' KeyPath = 'yes'>
+          <CopyFile Id='Newtonsoft.Json' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Bytescout.PDFExtractor' Guid='{c89f83f2-04c0-43f5-89bb-99d58fa2817b}'>
+        <File Id='Bytescout.PDFExtractor' Name='Bytescout.PDFExtractor.dll' DiskId='2' Source='../../Fluid/Business/Fluid.Business.DataServer/bin/Release/Bytescout.PDFExtractor.dll' KeyPath = 'yes'>
+          <CopyFile Id='Bytescout.PDFExtractor' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='Bytescout.PDFExtractor.OCRExtension' Guid='{c9daa63c-6a0b-4ff4-8503-a8073429ccb5}'>
+        <File Id='Bytescout.PDFExtractor.OCRExtension' Name='Bytescout.PDFExtractor.OCRExtension.dll' DiskId='2' Source='../../Fluid/Business/Fluid.Business.DataServer/bin/Release/Bytescout.PDFExtractor.OCRExtension.dll' KeyPath = 'yes'>
+          <CopyFile Id='Bytescout.PDFExtractor.OCRExtension' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='DevExpress.Charts.v19.1.Core' Guid='{6A1498F3-B446-4C2F-8A84-1C49B68E212A}'>
+        <File Id='DevExpress.Charts.v19.1.Core' Name='DevExpress.Charts.v19.1.Core.dll' DiskId='2' Source='../../Lib/DevExpress/DevExpress.Charts.v19.1.Core.dll' KeyPath='yes'>
+          <CopyFile Id='DevExpress.Charts.v19.1.Core' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='DevExpress.Data.v19.1' Guid='{8D33B9D6-7B78-43E7-8BC1-F0F649AD61FE}'>
+        <File Id='DevExpress.Data.v19.1' Name='DevExpress.Data.v19.1.dll' DiskId='2' Source='../../Lib/DevExpress/DevExpress.Data.v19.1.dll' KeyPath = 'yes'>
+          <CopyFile Id='DevExpress.Data.v19.1' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='DevExpress.Docs.v19.1' Guid='{0B014EED-2153-4796-BEFF-142266C29CED}'>
+        <File Id='DevExpress.Docs.v19.1' Name='DevExpress.Docs.v19.1.dll' DiskId='2' Source='../../Lib/DevExpress/DevExpress.Docs.v19.1.dll' KeyPath='yes'>
+          <CopyFile Id='DevExpress.Docs.v19.1' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='DevExpress.Mvvm.v19.1' Guid='{F56776D9-E93C-476D-8E57-6897AC25DC82}'>
+        <File Id='DevExpress.Mvvm.v19.1' Name='DevExpress.Mvvm.v19.1.dll' DiskId='2' Source='../../Lib/DevExpress/DevExpress.Mvvm.v19.1.dll' KeyPath='yes'>
+          <CopyFile Id='DevExpress.Mvvm.v19.1' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='DevExpress.Office.v19.1.Core' Guid='{1C793B24-7477-4B87-A76D-09C58321DDDA}'>
+        <File Id='DevExpress.Office.v19.1.Core' Name='DevExpress.Office.v19.1.Core.dll' DiskId='2' Source='../../Lib/DevExpress/DevExpress.Office.v19.1.Core.dll' KeyPath='yes'>
+          <CopyFile Id='DevExpress.Office.v19.1.Core' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='DevExpress.Spreadsheet.v19.1.Core' Guid='{AFAE3A3F-6C07-4B9D-979A-BB89B94F88CA}'>
+        <File Id='DevExpress.Spreadsheet.v19.1.Core' Name='DevExpress.Spreadsheet.v19.1.Core.dll' DiskId='2' Source='../../Lib/DevExpress/DevExpress.Spreadsheet.v19.1.Core.dll' KeyPath='yes'>
+          <CopyFile Id='DevExpress.Spreadsheet.v19.1.Core' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='DevExpress.Printing.v19.1.Core' Guid='{AE9F4F8F-4C37-40F0-8D6F-DF1824730E75}'>
+        <File Id='DevExpress.Printing.v19.1.Core' Name='DevExpress.Printing.v19.1.Core.dll' DiskId='2' Source='../../Lib/DevExpress/DevExpress.Printing.v19.1.Core.dll' KeyPath='yes'>
+          <CopyFile Id='DevExpress.Printing.v19.1.Core' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      <Component Id='DevExpress.Xpf.Spreadsheet.v19.1' Guid='{C3F15AAD-7B99-4154-BBBC-059FA26CE831}'>
+        <File Id='DevExpress.Xpf.Spreadsheet.v19.1' Name='DevExpress.Xpf.Spreadsheet.v19.1.dll' DiskId='2' Source='../../Lib/DevExpress/DevExpress.Xpf.Spreadsheet.v19.1.dll' KeyPath='yes'>
+          <CopyFile Id='DevExpress.Xpf.Spreadsheet.v19.1' DestinationDirectory='SchedulerServiceFolder' />
+        </File>
+      </Component>
+      
+      <!-- End Lib -->
+    </ComponentGroup>
+  </Fragment>
+</Wix>

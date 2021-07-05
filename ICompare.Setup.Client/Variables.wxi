@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <?define MAINEXE=$(var.ICompare.Business.MatchingService.TargetFileName)?>
+  <!--<?define VERSION=!(bind.FileVersion.$(var.MAINEXE))?>-->
+  <?define VERSION="4.0.8.11"?>
+  <?define PRODUCT="ICompare $(var.VERSION)"?>
+  <?define UPGRADECODEUID="{311CD372-4638-4F2B-80DF-5DF85B28B736}"?>
+  <?define SHORTCUTUID="{A7511816-E337-4C97-8805-AB779A3942E4}"?>
+</Include>

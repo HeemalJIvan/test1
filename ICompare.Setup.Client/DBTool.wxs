@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <ComponentGroup Id="DBToolComponents" Directory="DBTOOLINSTALLFOLDER">
+      <!--<Component Id='DBTool.Fluid.Business.Data.dll' Guid='{5C2A59E5-6A08-4867-A524-D52E5C17D9B3}'>
+        <File Id='DBTool.Fluid.Business.Data.dll' Name='Fluid.Business.Data.dll' DiskId='7' Source='../../ICompareCore/Business/Fluid.Business.Data/bin/Release/Fluid.Business.Data.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='ICompareCore.Test.DBToolConsole' Guid='{0ABC8FF3-40DF-42FB-B3AD-04D6C4D9FF2E}'>
+        <File Id='ICompareCore.Test.DBToolConsole' Name='ICompareCore.Test.DBToolConsole.exe' DiskId='7' Source='../../ICompareCore/Test/ICompareCore.Test.DBToolConsole/bin/Release/ICompareCore.Test.DBToolConsole.exe' KeyPath = 'yes' />
+      </Component>
+      <Component Id='ICompareCore.Test.DBToolConsole.exe.config' Guid='{0F136015-4B96-453B-898D-DBE10AB17525}'>
+        <File Id='ICompareCore.Test.DBToolConsole.exe.config' Name='ICompareCore.Test.DBToolConsole.exe.config' DiskId='7' Source='../../ICompareCore/Test/ICompareCore.Test.DBToolConsole/bin/Release/ICompareCore.Test.DBToolConsole.exe.config' KeyPath = 'yes' />
+      </Component>-->
+      <!--<Component Id='DBTool.FusionXC.Data.DBGenerator.dll' Guid='{8604B44F-94A3-4FB1-8AA1-2745472CA70B}'>
+        <File Id='DBTool.FusionXC.Data.DBGenerator.dll' Name='FusionXC.Data.DBGenerator.dll' DiskId='7' Source='../../Lib/FusionXC.Data.DBGenerator.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='DBTool.FusionXC.Data.dll' Guid='{D7FFA1FF-30DC-469C-A962-83ABC12AFE20}'>
+        <File Id='DBTool.FusionXC.Data.dll' Name='FusionXC.Data.dll' DiskId='7' Source='../../Lib/FusionXC.Data.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='DBTool.FusionXC.Data.Model.dll' Guid='{BFCFAD30-D9B7-42D1-9D93-61ADC9D9AA7A}'>
+        <File Id='DBTool.FusionXC.Data.Model.dll' Name='FusionXC.Data.Model.dll' DiskId='7' Source='../../Lib/FusionXC.Data.Model.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='DBTool.FusionXC.Data.Security.dll' Guid='{E7A7142A-F2CA-4A96-8712-C8062E6E0FDE}'>
+        <File Id='DBTool.FusionXC.Data.Security.dll' Name='FusionXC.Data.Security.dll' DiskId='7' Source='../../Lib/FusionXC.Data.Security.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='DBTool.ICompare.Data' Guid='{3E128692-EE05-490A-8D4E-64998481A8D4}'>
+        <File Id='DBTool.ICompare.Data' Name='ICompare.Data.dll' DiskId='7' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.Data.dll' KeyPath='yes' />
+      </Component>-->
+    </ComponentGroup>
+	</Fragment>
+</Wix>

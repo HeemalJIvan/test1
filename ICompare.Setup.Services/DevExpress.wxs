@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <ComponentGroup Id="DevExpressComponents" Directory="DEVEXPRESSINSTALLFOLDER">
+      <Component Id='DevExpress.Charts.v19.1.Core.dll' Guid='449576bf-1fb3-4993-af27-65541320c2dd'>
+        <File Id='DevExpress.Charts.v19.1.Core.dll' Name='DevExpress.Charts.v19.1.Core.dll' DiskId='6' Source='../../Lib/DevExpress.Charts.v19.1.Core.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.CodeParser.v19.1.dll' Guid='abb4d813-3fce-4769-bb2d-39b31862996c'>
+        <File Id='DevExpress.CodeParser.v19.1.dll' Name='DevExpress.CodeParser.v19.1.dll' DiskId='6' Source='../../Lib/DevExpress.CodeParser.v19.1.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.Data.v19.1.dll' Guid='7e1d8db2-f94d-4891-a4a5-5869b00efd6d'>
+        <File Id='DevExpress.Data.v19.1.dll' Name='DevExpress.Data.v19.1.dll' DiskId='6' Source='../../Lib/DevExpress.Data.v19.1.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.DataAccess.v19.1.dll' Guid='706a3301-c23e-4cdd-9e9c-e4d5c7c9e075'>
+        <File Id='DevExpress.DataAccess.v19.1.dll' Name='DevExpress.DataAccess.v19.1.dll' DiskId='6' Source='../../Lib/DevExpress.DataAccess.v19.1.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.Docs.v19.1.dll' Guid='65c49e05-f2af-4416-a588-7234d1c6021e'>
+        <File Id='DevExpress.Docs.v19.1.dll' Name='DevExpress.Docs.v19.1.dll' DiskId='6' Source='../../Lib/DevExpress.Docs.v19.1.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.Images.v19.1.dll' Guid='cb1332d6-6883-418c-b6fd-84c1ab4715dd'>
+        <File Id='DevExpress.Images.v19.1.dll' Name='DevExpress.Images.v19.1.dll' DiskId='6' Source='../../Lib/DevExpress.Images.v19.1.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.Office.v19.1.Core.dll' Guid='b9cc335a-75cf-464d-8070-3d6fa84d3fb9'>
+        <File Id='DevExpress.Office.v19.1.Core.dll' Name='DevExpress.Office.v19.1.Core.dll' DiskId='6' Source='../../Lib/DevExpress.Office.v19.1.Core.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.Pdf.v19.1.Core.dll' Guid='ba1e6e71-09b1-45e3-9076-96a83feca18d'>
+        <File Id='DevExpress.Pdf.v19.1.Core.dll' Name='DevExpress.Pdf.v19.1.Core.dll' DiskId='6' Source='../../Lib/DevExpress.Pdf.v19.1.Core.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.Pdf.v19.1.Drawing.dll' Guid='39879df2-f7b4-4484-b1b4-ac3e467fa80f'>
+        <File Id='DevExpress.Pdf.v19.1.Drawing.dll' Name='DevExpress.Pdf.v19.1.Drawing.dll' DiskId='6' Source='../../Lib/DevExpress.Pdf.v19.1.Drawing.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.Printing.v19.1.Core.dll' Guid='05b9abc7-fff6-4ac3-854e-8fdb57a813da'>
+        <File Id='DevExpress.Printing.v19.1.Core.dll' Name='DevExpress.Printing.v19.1.Core.dll' DiskId='6' Source='../../Lib/DevExpress.Printing.v19.1.Core.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.RichEdit.v19.1.Core.dll' Guid='1b80b0c1-e04e-4ce9-81ab-a22082c16459'>
+        <File Id='DevExpress.RichEdit.v19.1.Core.dll' Name='DevExpress.RichEdit.v19.1.Core.dll' DiskId='6' Source='../../Lib/DevExpress.RichEdit.v19.1.Core.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.Snap.v19.1.Core.dll' Guid='7f4b9baa-27f8-4df5-b6c9-26afec2e129c'>
+        <File Id='DevExpress.Snap.v19.1.Core.dll' Name='DevExpress.Snap.v19.1.Core.dll' DiskId='6' Source='../../Lib/DevExpress.Snap.v19.1.Core.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.Sparkline.v19.1.Core.dll' Guid='42e7f8f8-19b8-46f6-8ee3-0ecd6f5799af'>
+        <File Id='DevExpress.Sparkline.v19.1.Core.dll' Name='DevExpress.Sparkline.v19.1.Core.dll' DiskId='6' Source='../../Lib/DevExpress.Sparkline.v19.1.Core.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.Spreadsheet.v19.1.Core.dll' Guid='e7414652-fb62-4a81-9c1e-4f54dbccbd77'>
+        <File Id='DevExpress.Spreadsheet.v19.1.Core.dll' Name='DevExpress.Spreadsheet.v19.1.Core.dll' DiskId='6' Source='../../Lib/DevExpress.Spreadsheet.v19.1.Core.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.Xpo.v19.1.dll' Guid='a9ba96bd-bd33-4778-9881-4086177b50e4'>
+        <File Id='DevExpress.Xpo.v19.1.dll' Name='DevExpress.Xpo.v19.1.dll' DiskId='6' Source='../../Lib/DevExpress.Xpo.v19.1.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.XtraCharts.v19.1.dll' Guid='715f572f-6da7-49a8-89ac-1a9d60c05e6a'>
+        <File Id='DevExpress.XtraCharts.v19.1.dll' Name='DevExpress.XtraCharts.v19.1.dll' DiskId='6' Source='../../Lib/DevExpress.XtraCharts.v19.1.dll' KeyPath='yes' />
+      </Component>
+    </ComponentGroup>
+	</Fragment>
+</Wix>

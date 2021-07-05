@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+
+  <?include $(var.ProjectDir)\Variables.wxi ?>
+
+  <Product Id="*" Name="$(var.PRODUCT)" Language="1033" Version="$(var.VERSION)" Manufacturer="Doorway" UpgradeCode="$(var.UPGRADECODEUID)">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <PropertyRef Id="WIX_IS_NETFRAMEWORK_46_OR_LATER_INSTALLED"/>
+    <Condition Message="This application requires .NET Framework 4.6.1. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR WIX_IS_NETFRAMEWORK_46_OR_LATER_INSTALLED]]>
+    </Condition>
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." AllowSameVersionUpgrades="yes" />
+    <Media Id="1" Cabinet="Scheduler.cab" EmbedCab="yes" CompressionLevel="high" />
+    <Media Id="2" Cabinet="SchILib.cab" EmbedCab="no" CompressionLevel="high" />
+
+    <Feature Id="ProductFeature" Title="$(var.PRODUCT)" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="SchedulerServiceComponents" />
+      <ComponentGroupRef Id="PostInstallerComponents" />
+    </Feature>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="APPLICATIONFOLDER" />
+    <UIRef Id="MyUI" />
+
+    <Property Id="ARPPRODUCTICON" Value="iComparefinal.ico" />
+    <!--<Icon Id="iComparefinal.ico" SourceFile="../../UI/Fluid.UI.Resources/Images/function.png" />
+
+    <WixVariable Id="WixUIBannerBmp" Value="../../UI/Fluid.UI.Resources/Images/function.png" />
+    <WixVariable Id="WixUIDialogBmp" Value="../../UI/Fluid.UI.Resources/Images/function.png" />-->
+
+    <WixVariable Id="WixUILicenseRtf" Value="Licence.rtf" />
+
+    <Property Id="WixShellExecTarget" Value="[APPLICATIONFOLDER]ICompare.Setup.SchedulerPostInstaller.exe" />
+    <CustomAction Id="LaunchApplication"
+        BinaryKey="WixCA"
+        DllEntry="WixShellExec"
+        Impersonate="yes" />
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="DOORWAY" Name="Doorway">
+        <Directory Id="APPLICATIONFOLDER" Name="$(var.PRODUCT)">
+          <Directory Id="SchedulerConsoleFolder" Name="Scheduler Console" />
+          <Directory Id="SchedulerServiceFolder" Name="Scheduler Service" />
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Property Id="ApplicationFolderName" Value="Doorway" />
+    <Property Id="WixAppFolder" Value="WixPerMachineFolder" />
+  </Fragment>
+
+
+</Wix>

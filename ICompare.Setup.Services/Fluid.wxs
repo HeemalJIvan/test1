@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <ComponentGroup Id="FluidComponents" Directory="FLUIDINSTALLFOLDER">
+      <Component Id='Fluid.Business.Data.dll' Guid='21671870-7e55-46cf-ade7-d2e573504cd1'>
+        <File Id='Fluid.Business.Data.dll' Name='Fluid.Business.Data.dll' DiskId='3' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release//Fluid.Business.Data.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Fluid.Business.DataServer.dll' Guid='58d0dc1a-168d-4f25-8366-5dbbd05a403d'>
+        <File Id='Fluid.Business.DataServer.dll' Name='Fluid.Business.DataServer.dll' DiskId='3' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release//Fluid.Business.DataServer.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Fluid.Business.dll' Guid='83878335-ebba-4ff7-9159-38bb43be5074'>
+        <File Id='Fluid.Business.dll' Name='Fluid.Business.dll' DiskId='3' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release//Fluid.Business.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Fluid.Business.MatchingServer.dll' Guid='f1c5cdca-5dcb-49d4-bbb2-791ddc89b5ff'>
+        <File Id='Fluid.Business.MatchingServer.dll' Name='Fluid.Business.MatchingServer.dll' DiskId='3' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release//Fluid.Business.MatchingServer.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Fluid.Business.ProcessLib.dll' Guid='a4fe8ed7-dd82-4c0e-9dc4-83f9fcbaf54c'>
+        <File Id='Fluid.Business.ProcessLib.dll' Name='Fluid.Business.ProcessLib.dll' DiskId='3' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release/Fluid.Business.ProcessLib.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Fluid.Business.Scheduler.dll' Guid='e619ce51-d5b0-498d-9484-7451a6f30619'>
+        <File Id='Fluid.Business.Scheduler.dll' Name='Fluid.Business.Scheduler.dll' DiskId='3' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release/Fluid.Business.Scheduler.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Fluid.Business.Validation.dll' Guid='{9E28B61E-704E-4DD5-AB6C-772E0400F2AC}'>
+        <File Id='Fluid.Business.Validation.dll' Name='Fluid.Business.Validation.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.Business.Validation.dll' KeyPath = 'yes' />
+      </Component>
+
+
+    </ComponentGroup>
+	</Fragment>
+</Wix>

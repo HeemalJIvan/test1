@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <?include $(var.ProjectDir)\Variables.wxi ?>
+  <Fragment>
+    <ComponentGroup Id="AllocationProductComponents" Directory="AllocationServiceFolder">
+      <Component Id="AllocationServiceExecutable" Guid="$(var.ALLOCATIONSERVICEUID)">
+        <File Id="ICompare.Business.AllocationService" Name="ICompare.Business.AllocationService.exe" DiskId="1" Source="../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.AllocationService.exe" KeyPath="yes" />
+        <ServiceInstall
+					Id="AllocationServiceInstaller"
+					Type="ownProcess"
+					Name="icompareallocations $(var.VERSION)"
+					DisplayName="iCompare Allocation Service $(var.VERSION)"
+					Description="iCompare Allocation Service $(var.VERSION)"
+					Start="demand"
+					ErrorControl="normal"
+				/>
+        <ServiceControl Id="AllocationService" Stop="both" Remove="uninstall" Name="icompareallocations $(var.VERSION)" Wait="yes" />
+
+        <RegistryKey Id='ICompareRegInstallDir' Root='HKLM' Key='Software\[Manufacturer]\[ProductName]' ForceCreateOnInstall='yes'>
+          <RegistryValue Type='string' Name='AppPath' Value='[TARGETDIR]'/>
+          <RegistryValue Type='string' Name='InstallDir' Value='TBA' />
+        </RegistryKey>
+      </Component>
+
+      <Component Id='ICompare.Business.AllocationService.exe.config' Guid='{5FEBA992-72EC-452A-9177-294EB5881A8C}'>
+        <File Id='ICompare.Business.AllocationService.exe.config' Name='ICompare.Business.AllocationService.exe.config' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.AllocationService.exe.config' KeyPath='yes' />
+      </Component>
+
+      <Component Id='FusionXC.Data.Model' Guid='{6ee433e2-85b1-463a-ad31-ffc762049482}'>
+        <File Id='FusionXC.Data.Model' Name='FusionXC.Data.Model.dll' DiskId='1' Source='../../Lib/FusionXC.Data.Model.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Fluid.Business.Data' Guid='{AFFDCC8D-1F3A-47F8-8B36-611A574AFE97}'>
+        <File Id='Fluid.Business.Data' Name='Fluid.Business.Data.dll'  DiskId='1' Source='../../ICompareCore/Business/Fluid.Business.Data/bin/Release/Fluid.Business.Data.dll' KeyPath = 'yes' />
+      </Component>
+      
+      <!--<Component Id='FusionXC.Data.ApplicationServices' Guid='{587C0037-4521-4268-96D4-2CF127DD67BD}'>
+        <File Id='FusionXC.Data.ApplicationServices' Name='FusionXC.Data.ApplicationServices.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/FusionXC.Data.ApplicationServices.dll' KeyPath='yes' />
+      </Component>-->
+
+      <Component Id='log4net' Guid='44C8B7F2-9806-4657-991C-9890A211A7BE'>
+        <File Id='log4net' Name='log4net.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/log4net.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='NCalc' Guid='907CE3BC-F997-4BD5-8E6E-C289E5817A2B'>
+        <File Id='NCalc' Name='NCalc.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/NCalc.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='FusionXC.Data' Guid='{1C3BC2AF-57B7-46F4-B520-1E53F928911D}'>
+        <File Id='FusionXC.Data' Name='FusionXC.Data.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/FusionXC.Data.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='FusionXC.Data.Security' Guid='{3B261885-6B65-4D5E-8375-37064BFDE57B}'>
+        <File Id='FusionXC.Data.Security' Name='FusionXC.Data.Security.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/FusionXC.Data.Security.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='FusionXC.Data.Specialized' Guid='{C75C9442-C6C7-4304-81B1-76F8315FD028}'>
+        <File Id='FusionXC.Data.Specialized' Name='FusionXC.Data.Specialized.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/FusionXC.Data.Specialized.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='FusionXC.Data.Serialize' Guid='{6698A500-8DDA-40A0-936B-29C6573D99AF}'>
+        <File Id='FusionXC.Data.Serialize' Name='FusionXC.Data.Serialize.dll' DiskId='1' Source='../../Lib/FusionXC.Data.Serialize.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='FusionXC.Data.Workflow' Guid='{B964FEAA-A852-4DD0-AD1B-7F436F308FD0}'>
+        <File Id='FusionXC.Data.Workflow' Name='FusionXC.Data.Workflow.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/FusionXC.Data.Workflow.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.Business.Accounting' Guid='{4F9A8707-FADB-47DC-9019-3EEF1A2FB5D8}'>
+        <File Id='ICompare.Business.Accounting' Name='ICompare.Business.Accounting.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.Accounting.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.Business.AllocationServer' Guid='{DC197C83-57C1-4F33-8B2C-7D14590EF8AF}'>
+        <File Id='ICompare.Business.AllocationServer' Name='ICompare.Business.AllocationServer.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.AllocationServer.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Business' Guid='{2851BE61-5929-48C1-984A-7F664305E237}'>
+        <File Id='ICompare.Business' Name='ICompare.Business.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Business.MatchingServer' Guid='{8B8CDDEC-7999-406F-B257-9DFAEEFABDD9}'>
+        <File Id='ICompare.Business.MatchingServer' Name='ICompare.Business.MatchingServer.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.MatchingServer.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.Business.Models' Guid='{30457FDA-B5AA-468D-91FD-A2221FE242DA}'>
+        <File Id='ICompare.Business.Models' Name='ICompare.Business.Models.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.Models.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.Business.Observer_icompareallocations' Guid='{36407F63-27F2-42AA-9154-5489AF926384}'>
+        <File Id='ICompare.Business.Observer_icompareallocations' Name='ICompare.Business.Observer.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.Observer.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Business.TransformationServer' Guid='{76B28698-E454-429B-A69A-AFB1E1707CDB}'>
+        <File Id='ICompare.Business.TransformationServer' Name='ICompare.Business.TransformationServer.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Business.TransformationServer.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Data' Guid='AA17D5BC-B5FB-4276-9F9A-959A1C064E57'>
+        <File Id='ICompare.Data' Name='ICompare.Data.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Data.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Data.Eventing' Guid='79B378EC-3FE6-45BF-A969-68EAA9512B68'>
+        <File Id='ICompare.Data.Eventing' Name='ICompare.Data.Eventing.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Data.Eventing.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.Data.Models' Guid='5B403D6E-B5C8-44D8-84FB-DCF0727FDF39'>
+        <File Id='ICompare.Data.Models' Name='ICompare.Data.Models.dll' DiskId='1' Source='../../Business/ICompare.Business.AllocationService/bin/Release/ICompare.Data.Models.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.Data.Operations.Sql' Guid='B3247EF1-B620-4AB6-8AF9-FD55DB2876B9'>
+        <File Id='ICompare.Data.Operations.Sql' Name='ICompare.Data.Operations.Sql.dll' DiskId='1' Source='../../ICmpare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Data.Operations.Sql.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.Data.Session' Guid='784DAAE4-99B6-49FC-AB35-3EE485571139'>
+        <File Id='ICompare.Data.Session' Name='ICompare.Data.Session.dll' DiskId='1' Source='../../ICmpare/Business/ICompare.Business.AllocationService/bin/Release/ICompare.Data.Session.dll' KeyPath='yes' />
+      </Component>-->
+
+      <Component Id='IronPython' Guid='CC00B175-E661-438A-BF1B-019838A8ECE0'>
+        <File Id='IronPython' Name='IronPython.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/IronPython.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='IronPython.Modules' Guid='5A345820-81FA-40CE-916B-EB7D4D10733E'>
+        <File Id='IronPython.Modules' Name='IronPython.Modules.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.TransformationServer/bin/Release/IronPython.Modules.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='Microsoft.Dynamic' Guid='8F1CC6BD-096F-4209-AE9B-72DFF63C05E2'>
+        <File Id='Microsoft.Dynamic' Name='Microsoft.Dynamic.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/Microsoft.Dynamic.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='Microsoft.Scripting' Guid='CBED82CD-DF10-43CD-BA71-9BE54B503E34'>
+        <File Id='Microsoft.Scripting' Name='Microsoft.Scripting.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/Microsoft.Scripting.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='Microsoft.Scripting.Metadata' Guid='C8FBC246-039F-4AC3-803D-9E1C9D3A6F10'>
+        <File Id='Microsoft.Scripting.Metadata' Name='Microsoft.Scripting.Metadata.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.AllocationService/bin/Release/Microsoft.Scripting.Metadata.dll' KeyPath='yes' />
+      </Component>
+
+      <!--<Component Id='ICompare.Data.Synapse' Guid='{0FCB1AE4-60D1-4417-804C-6744391B1821}'>
+        <File Id='ICompare.Data.Synapse' Name='ICompare.Data.Synapse.dll' DiskId='1' Source='../../ICompare/Data/ICompare.Data.Synapse/bin/Release/ICompare.Data.Synapse.dll' KeyPath='yes' />
+      </Component>-->
+
+      <Component Id='ICompare.Test.AllocationEngineConsole.exe' Guid='{EA96C74D-D58B-48F9-9311-D490D7993638}'>
+        <File Id='ICompare.Test.AllocationEngineConsole.exe' Name='ICompare.Test.AllocationEngineConsole.exe' DiskId='1' Source='../../ICompare/Test/ICompare.Test.AllocationEngineConsole/bin/Release/ICompare.Test.AllocationEngineConsole.exe' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Test.AllocationEngineConsole.exe.config' Guid='{2086541E-B013-4E82-8A0F-ED23BF8318D5}'>
+        <File Id='ICompare.Test.AllocationEngineConsole.exe.config' Name='ICompare.Test.AllocationEngineConsole.exe.config' DiskId='1' Source='../../ICompare/Test/ICompare.Test.AllocationEngineConsole/bin/Release/ICompare.Test.AllocationEngineConsole.exe.config' KeyPath='yes' />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

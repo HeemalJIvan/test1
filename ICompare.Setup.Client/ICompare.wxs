@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="ICompareComponents" Directory="ICOMPAREFOLDER">
+
+      <Component Id='MainExecutable' Guid='778C3491-1CF1-4ED5-9531-EF64EA0E4044'>
+        <File Id='ICompareEXE' Name='ICompare.UI.Wpf.ShellStartup.exe' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Shell.exe' KeyPath='yes'>
+
+        </File>
+
+        <!--<RegistryKey Id='ICompareRegInstallDir' Root='HKLM' Key='Software\[Manufacturer]\[ProductName]' ForceCreateOnInstall='yes'>
+          <RegistryValue Type='string' Name='AppPath' Value='[TARGETDIR]'/>
+          <RegistryValue Type='string' Name='InstallDir' Value='TBA' />
+        </RegistryKey>-->
+      </Component>
+
+      <!--ICOMPARE DISK1 -->
+      
+      <!--<Component Id='ICompare.UI.Wpf.Module.DataLookupImport' Guid='494670D7-6C00-4EB1-BAF2-B540772D933A'>
+        <File Id='ICompare.UI.Wpf.Module.DataLookupImport' Name='ICompare.UI.Wpf.Module.DataLookupImport.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.DataLookupImport.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.UI.Wpf.Module.StatusbarControl' Guid='93567919-D995-48B2-9F4E-B5504A7D75B0'>
+        <File Id='ICompare.UI.Wpf.Module.StatusbarControl' Name='ICompare.UI.Wpf.Module.StatusbarControl.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.StatusbarControl.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Business.ValidationRules' Guid='3A670C6F-0962-485E-AC70-9BCEA7E87BFB'>
+        <File Id='ICompare.Business.ValidationRules' Name='ICompare.Business.ValidationRules.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.ValidationRules/bin/Release/ICompare.Business.ValidationRules.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.UI.Wpf.Module.AuditLogViewer' Guid='{93B5AFF7-1331-4194-88D5-0701856CA154}'>
+        <File Id='ICompare.UI.Wpf.Module.AuditLogViewer' Name='ICompare.UI.Wpf.Module.AuditLogViewer.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.AuditLogViewer.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.ApplicationManager' Guid='E14E0F08-B6C0-4EF2-9905-189D1D47F9C1'>
+        <File Id='ICompare.ApplicationManager' Name='ICompare.ApplicationManager.exe' DiskId='1' Source='../../ICompare.ApplicationManager/bin/Release/ICompare.ApplicationManager.exe' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.ApplicationManager.Config' Guid='24F4ED12-5F7F-4B3D-88AF-958A476EFAFD'>
+        <File Id='ICompare.ApplicationManager.Config' Name='ICompare.ApplicationManager.exe.config' DiskId='1' Source='../../ICompare/ICompare.ApplicationManager/bin/Release/ICompare.ApplicationManager.exe.config' KeyPath='yes' />
+      </Component>-->
+      
+      <!--<Component Id='Icompare.Business.Accounting' Guid='80BD9556-FCD1-4070-9C15-A891B364EE6A'>
+        <File Id='Icompare.Business.Accounting' Name='Icompare.Business.Accounting.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.Business.Accounting.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.Business.MatchingServer' Guid='F0E40919-C66F-4EF9-A22C-A320954F65FF'>
+        <File Id='ICompare.Business.MatchingServer' Name='ICompare.Business.MatchingServer.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.Business.MatchingServer.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Business.TransformationServer' Guid='C3052C46-BE97-4B69-B7B4-F052E344FC51'>
+        <File Id='ICompare.Business.TransformationServer' Name='ICompare.Business.TransformationServer.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.Business.TransformationServer.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Data' Guid='AA17D5BC-B5FB-4276-9F9A-959A1C064E57'>
+        <File Id='ICompare.Data' Name='ICompare.Data.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.Data.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Data.Eventing' Guid='79B378EC-3FE6-45BF-A969-68EAA9512B68'>
+        <File Id='ICompare.Data.Eventing' Name='ICompare.Data.Eventing.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.Data.Eventing.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.Data.Models' Guid='5B403D6E-B5C8-44D8-84FB-DCF0727FDF39'>
+        <File Id='ICompare.Data.Models' Name='ICompare.Data.Models.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.Data.Models.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.Data.Operations.Sql' Guid='B3247EF1-B620-4AB6-8AF9-FD55DB2876B9'>
+        <File Id='ICompare.Data.Operations.Sql' Name='ICompare.Data.Operations.Sql.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.Data.Operations.Sql.dll' KeyPath='yes' />
+      </Component>-->
+		<Component Id='ICompare.Data.Operations' Guid='EA7E104E-C63A-4287-9B5B-3E56023312FF'>
+        <File Id='ICompare.Data.Operations' Name='ICompare.Data.Operations.dll' DiskId='1' Source='../../ICompare/Data/ICompare.Data.Operations/bin/Release/ICompare.Data.Operations.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Data.Security' Guid='00C066AD-15E2-46D9-9C38-273CFF718C27'>
+        <File Id='ICompare.Data.Security' Name='ICompare.Data.Security.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.Data.Security.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Data.Session' Guid='784DAAE4-99B6-49FC-AB35-3EE485571139'>
+        <File Id='ICompare.Data.Session' Name='ICompare.Data.Session.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.Data.Session.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Data.ApplicationServices' Guid='F0262947-BD46-45EA-8937-9D19D0AE14F0'>
+        <File Id='ICompare.Data.ApplicationServices' Name='ICompare.Data.ApplicationServices.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.Data.ApplicationServices.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf' Guid='3BB705C1-2245-4C9C-844D-A2A359B76274'>
+        <File Id='ICompare.UI.Wpf' Name='ICompare.UI.Wpf.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf/bin/Release/ICompare.UI.Wpf.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.UI.Wpf.Module.About' Guid='D491B2B0-EBBC-446E-BBD5-36624875D937'>
+        <File Id='ICompare.UI.Wpf.Module.About' Name='ICompare.UI.Wpf.Module.About.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.About.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.UI.Wpf.Module.AccountSetup' Guid='72C0EACE-D9D2-4E43-9B7B-9B42F3540778'>
+        <File Id='ICompare.UI.Wpf.Module.AccountSetup' Name='ICompare.UI.Wpf.Module.AccountSetup.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.AccountSetup.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Module.AppSetupManager' Guid='9B631B07-2774-4BEC-A0C5-245586A8E285'>
+        <File Id='ICompare.UI.Wpf.Module.AppSetupManager' Name='ICompare.UI.Wpf.Module.AppSetupManager.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.AppSetupManager.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Module.ApplicationActivityControl' Guid='53E0C173-93DA-4248-8CAB-0C689E06726E'>
+        <File Id='ICompare.UI.Wpf.Module.ApplicationActivityControl' Name='ICompare.UI.Wpf.Module.ApplicationActivityControl.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.ApplicationActivityControl.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.UI.Wpf.Module.ServerManager' Guid='{194972E2-B5C8-42A1-984D-7DE67EC710D5}'>
+        <File Id='ICompare.UI.Wpf.Module.ServerManager' Name='ICompare.UI.Wpf.Module.ServerManager.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.ServerManager.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.UI.Wpf.Module.AutoRulesManager' Guid='3650EFE1-2F42-4D68-BB7D-182FAE584C23'>
+        <File Id='ICompare.UI.Wpf.Module.AutoRulesManager' Name='ICompare.UI.Wpf.Module.AutoRulesManager.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.AutoRulesManager.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.UI.Wpf.Module.AutoRulesManager2' Guid='FB55746B-ACF8-45E6-B24B-CEDC7DC554A8'>
+        <File Id='ICompare.UI.Wpf.Module.AutoRulesManager2' Name='ICompare.UI.Wpf.Module.AutoRulesManager2.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.AutoRulesManager2.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Module.AutoRulesSetupControl' Guid='63445846-842B-4A60-B7B5-FC7D1703101B'>
+        <File Id='ICompare.UI.Wpf.Module.AutoRulesSetupControl' Name='ICompare.UI.Wpf.Module.AutoRulesSetupControl.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.AutoRulesSetupControl.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.UI.Wpf.Module.DashboardView' Guid='9076ADEF-F84B-4298-A3B0-A75E574FD391'>
+        <File Id='ICompare.UI.Wpf.Module.DashboardView' Name='ICompare.UI.Wpf.Module.DashboardView.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.DashboardView.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.UI.Wpf.Module.DataImport' Guid='2085D07C-D3D4-4C7A-958D-5FB16393A43F'>
+        <File Id='ICompare.UI.Wpf.Module.DataImport' Name='ICompare.UI.Wpf.Module.DataImport.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.DataImport.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.UI.Wpf.Module.DataImportViewer' Guid='FE3A4037-B901-4706-889E-1047016E7F17'>
+        <File Id='ICompare.UI.Wpf.Module.DataImportViewer' Name='ICompare.UI.Wpf.Module.DataImportViewer.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.DataImportViewer.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.UI.Wpf.Module.ExpressionBuilder' Guid='FC1777FB-C21D-47C5-83F6-566E64D2FC78'>
+        <File Id='ICompare.UI.Wpf.Module.ExpressionBuilder' Name='ICompare.UI.Wpf.Module.ExpressionBuilder.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.ExpressionBuilder.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Module.JournalRuleSetup' Guid='4539D01A-AFF8-4B61-A103-EB221EE963F4'>
+        <File Id='ICompare.UI.Wpf.Module.JournalRuleSetup' Name='ICompare.UI.Wpf.Module.JournalRuleSetup.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.JournalRuleSetup.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Module.ManualAllocationManager' Guid='FFDE92D1-491B-4378-9AA0-29D811FC3D83'>
+        <File Id='ICompare.UI.Wpf.Module.ManualAllocationManager' Name='ICompare.UI.Wpf.Module.ManualAllocationManager.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.ManualAllocationManager.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Module.ManualReconControl' Guid='19046A6B-8FE6-4580-B703-CA721E639F21'>
+        <File Id='ICompare.UI.Wpf.Module.ManualReconControl' Name='ICompare.UI.Wpf.Module.ManualReconControl.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.ManualReconControl.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Module.MenuControl' Guid='FDA47172-3929-4B85-B5DA-47943D12FFFD'>
+        <File Id='ICompare.UI.Wpf.Module.MenuControl' Name='ICompare.UI.Wpf.Module.MenuControl.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.MenuControl.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Module.ModuleManager' Guid='87FB5F75-CA9C-43AB-8915-58CB506C553F'>
+        <File Id='ICompare.UI.Wpf.Module.ModuleManager' Name='ICompare.UI.Wpf.Module.ModuleManager.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.ModuleManager.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.UI.Wpf.Module.ReconLogViewer' Guid='20DA32C3-6E44-4A6C-8FFF-3C2D6739505C'>
+        <File Id='ICompare.UI.Wpf.Module.ReconLogViewer' Name='ICompare.UI.Wpf.Module.ReconLogViewer.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.ReconLogViewer.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.UI.Wpf.Module.ServerManager' Guid='00B9952E-1635-4C1E-AD1F-E268C1801921'>
+        <File Id='ICompare.UI.Wpf.Module.ServerManager' Name='ICompare.UI.Wpf.Module.ServerManager.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.ServerManager.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.UI.Wpf.Module.SessionManager' Guid='23BE672D-1E6E-4C06-8F0C-7A8F49C0C9D0'>
+        <File Id='ICompare.UI.Wpf.Module.SessionManager' Name='ICompare.UI.Wpf.Module.SessionManager.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.SessionManager.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.UI.Wpf.Module.TabPageManager' Guid='3C536F5D-5353-46F7-9948-6CBD9FBA4ECE'>
+        <File Id='ICompare.UI.Wpf.Module.TabPageManager' Name='ICompare.UI.Wpf.Module.TabPageManager.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.TabPageManager.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.UI.Wpf.Module.Template' Guid='65B37B0D-4206-45B2-BA9E-5C39CF4E7C16'>
+        <File Id='ICompare.UI.Wpf.Module.Template' Name='ICompare.UI.Wpf.Module.Template.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.Template.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.UI.Wpf.Module.ToolbarNavigator' Guid='B730FB3E-62BB-4BBC-BC82-EE5D1AB07A2E'>
+        <File Id='ICompare.UI.Wpf.Module.ToolbarNavigator' Name='ICompare.UI.Wpf.Module.ToolbarNavigator.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.ToolbarNavigator.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Module.UserManager' Guid='72AD76B2-6D39-4262-B235-881B3F4FDB8F'>
+        <File Id='ICompare.UI.Wpf.Module.UserManager' Name='ICompare.UI.Wpf.Module.UserManager.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.UserManager.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Module.LookupManager' Guid='8F0FE076-7FC8-409B-B958-ACD59190FB18'>
+        <File Id='ICompare.UI.Wpf.Module.LookupManager' Name='ICompare.UI.Wpf.Module.LookupManager.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.LookupManager.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.UI.Wpf.Module.DataItemViewer' Guid='4240D59D-9C84-4832-BB4B-77F097910A2F'>
+        <File Id='ICompare.UI.Wpf.Module.DataItemViewer' Name='ICompare.UI.Wpf.Module.DataItemViewer.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.DataItemViewer.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.UI.Wpf.Module.AutoAllocationSetup' Guid='8CF38214-5698-4DF8-9257-7F328EE73A3E'>
+        <File Id='ICompare.UI.Wpf.Module.AutoAllocationSetup' Name='ICompare.UI.Wpf.Module.AutoAllocationSetup.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.AutoAllocationSetup.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Module.AutoAllocationCreate' Guid='7314D417-7797-40C9-8E35-F4F0D43BAE5D'>
+        <File Id='ICompare.UI.Wpf.Module.AutoAllocationCreate' Name='ICompare.UI.Wpf.Module.AutoAllocationCreate.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.AutoAllocationCreate.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Module.AutoAllocationsManager' Guid='17901E8E-06B8-411D-8E2E-ED152F0B1E7A'>
+        <File Id='ICompare.UI.Wpf.Module.AutoAllocationsManager' Name='ICompare.UI.Wpf.Module.AutoAllocationsManager.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.AutoAllocationsManager.dll' KeyPath='yes' />
+      </Component>
+      
+      <Component Id='ICompare.UI.Wpf.Module.AllocationLookupGroupManager' Guid='EB4CA957-6DDB-46EA-B832-9F83B4A0331F'>
+        <File Id='ICompare.UI.Wpf.Module.AllocationLookupGroupManager' Name='ICompare.UI.Wpf.Module.AllocationLookupGroupManager.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.AllocationLookupGroupManager.dll' KeyPath='yes' />
+      </Component>
+      
+      
+      <!--<Component Id='ICompare.UI.Wpf.Module.AllocationsDashboard' Guid='559C5653-C94D-4599-B1F2-1C581ACB03F2'>
+        <File Id='ICompare.UI.Wpf.Module.AllocationsDashboard' Name='ICompare.UI.Wpf.Module.AllocationsDashboard.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.AllocationsDashboard.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.UI.Wpf.Module.AllocationRuleManager' Guid='{119FDCF6-D5DB-4BED-91C2-78616A7DC888}'>
+        <File Id='ICompare.UI.Wpf.Module.AllocationRuleManager' Name='ICompare.UI.Wpf.Module.AllocationRuleManager.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.AllocationRuleManager.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompare.UI.Wpf.Module.SystemMessageControl' Guid='{A78D5DAE-C586-4DC6-AE7A-302F0C669E15}'>
+        <File Id='ICompare.UI.Wpf.Module.SystemMessageControl' Name='ICompare.UI.Wpf.Module.SystemMessageControl.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.SystemMessageControl.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.UI.Wpf.Module.DataConverterSetupControl' Guid='{0AEB79B1-1F4A-4AC1-AEA0-1FF11CA546E7}'>
+        <File Id='ICompare.UI.Wpf.Module.DataConverterSetupControl' Name='ICompare.UI.Wpf.Module.DataConverterSetupControl.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.DataConverterSetupControl.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.UI.Wpf.Resources' Guid='DEEE9001-5969-4406-9FD6-3AAB0D4739EF'>
+        <File Id='ICompare.UI.Wpf.Resources' Name='ICompare.UI.Wpf.Resources.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Resources.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.UI.Wpf.ShellStartup.Config' Guid='A3230052-7A20-413E-8598-B7DF869DF2B9'>
+        <File Id='ICompare.UI.Wpf.ShellStartup.Config' Name='ICompare.UI.Wpf.ShellStartup.exe.config' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.ShellStartup/bin/Release/ICompare.UI.Wpf.ShellStartup.exe.config' KeyPath='yes' />
+      </Component>-->
+      <Component Id='settings' Guid='D98D2987-370E-42F9-88B8-A8E965BFACDE'>
+        <File Id='settings' Name='settings.fss' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/settings.fss' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.UI.Wpf.Module.ProposedMatchesView' Guid='023CB724-6595-4AC3-B87A-A39D1C938BC8'>
+        <File Id='ICompare.UI.Wpf.Module.ProposedMatchesView.dll' Name='ICompare.UI.Wpf.Module.ProposedMatchesView.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.ProposedMatchesView.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.UI.Wpf.Module.AllocationWorkflow' Guid='{93EFB950-7542-45E8-95D4-6CCCA6642C9E}'>
+        <File Id='ICompare.UI.Wpf.Module.AllocationWorkflow.dll' Name='ICompare.UI.Wpf.Module.AllocationWorkflow.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.AllocationWorkflow.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Component.Extension' Guid='{7CA07E17-6F94-4D41-9256-A83D5DC5F99B}'>
+        <File Id='ICompare.UI.Wpf.Component.Extension.dll' Name='ICompare.UI.Wpf.Component.Extension.dll' DiskId='1' Source='../../ICompare/UI/Module/ICompare.UI.Wpf.Module.AllocationWorkflow/bin/Release/ICompare.UI.Wpf.Component.Extension.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompare.Business.AllocationServer' Guid='{4065169B-6DE4-44E0-9EB1-6C13FF0D55E7}'>
+        <File Id='ICompare.Business.AllocationServer' Name='ICompare.Business.AllocationServer.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.Business.AllocationServer.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.UI.Wpf.Module.Dashboard' Guid='{6F065170-F5AE-498F-92EC-27FFA9FA8E34}'>
+        <File Id='ICompare.UI.Wpf.Module.Dashboard' Name='ICompare.UI.Wpf.Module.Dashboard.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.Dashboard.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.UI.Wpf.Module.DashboardHealth' Guid='{ECD74E12-C2CA-4932-8F4D-E4DE5438332F}'>
+        <File Id='ICompare.UI.Wpf.Module.DashboardHealth' Name='ICompare.UI.Wpf.Module.DashboardHealth.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.DashboardHealth.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.UI.WPF.Module.MultiwayMatches' Guid='{1FC17992-C9EE-486E-945A-A79838ED06BB}'>
+        <File Id='ICompare.UI.WPF.Module.MultiwayMatches' Name='ICompare.UI.WPF.Module.MultiwayMatches.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.WPF.Module.MultiwayMatches.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.UI.Wpf.Module.JournalExport' Guid='{D7E03BD6-72CB-406C-8BDC-8DB95B1E3EAF}'>
+        <File Id='ICompare.UI.Wpf.Module.JournalExport' Name='ICompare.UI.Wpf.Module.JournalExport.dll' DiskId='1' Source='../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Module.JournalExport.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.UI.Wpf.Module.SynapseProgramView' Guid='{F266D2E9-8817-4770-A818-82331F420A11}'>
+        <File Id='ICompare.UI.Wpf.Module.SynapseProgramView' Name='ICompare.UI.Wpf.Module.SynapseProgramView.dll' DiskId='1' Source='../../ICompare/UI/Module/ICompare.UI.Wpf.Module.SynapseProgramView/bin/Release/ICompare.UI.Wpf.Module.SynapseProgramView.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.Data.Synapse' Guid='{0FCB1AE4-60D1-4417-804C-6744391B1821}'>
+        <File Id='ICompare.Data.Synapse' Name='ICompare.Data.Synapse.dll' DiskId='1' Source='../../ICompare/Data/ICompare.Data.Synapse/bin/Release/ICompare.Data.Synapse.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.UI.Wpf.Module.SchedulerView' Guid='{D671354A-965F-4496-89C5-7BB64C1174F0}'>
+        <File Id='ICompare.UI.Wpf.Module.SchedulerView' Name='ICompare.UI.Wpf.Module.SchedulerView.dll' DiskId='1' Source='../../ICompare/UI/Module/ICompare.UI.Wpf.Module.SchedulerView/bin/Release/ICompare.UI.Wpf.Module.SchedulerView.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.UI.Wpf.Module.ExceptionScreen' Guid='{99D38B1D-A301-4B9D-BAD3-CD67B538BC87}'>
+        <File Id='ICompare.UI.Wpf.Module.ExceptionScreen' Name='ICompare.UI.Wpf.Module.ExceptionScreen.dll' DiskId='1' Source='../../ICompare/UI/Module/ICompare.UI.Wpf.Module.ExceptionScreen/bin/Release/ICompare.UI.Wpf.Module.ExceptionScreen.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.UI.Wpf.Module.MultiwayMatchView' Guid='{E50D36EB-B2BD-45D6-BA00-F7E541F7B841}'>
+        <File Id='ICompare.UI.Wpf.Module.MultiwayMatchView' Name='ICompare.UI.Wpf.Module.MultiwayMatchView.dll' DiskId='1' Source='../../ICompare/UI/Module/ICompare.UI.Wpf.Module.MultiwayMatchView/bin/Release/ICompare.UI.Wpf.Module.MultiwayMatchView.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.UI.Wpf.Module.Scheduler' Guid='{3715F4B2-FAA8-472C-A9DF-5B2D418AC590}'>
+        <File Id='ICompare.UI.Wpf.Module.Scheduler' Name='ICompare.UI.Wpf.Module.Scheduler.dll' DiskId='1' Source='../../ICompare/UI/Module/ICompare.UI.Wpf.Module.Scheduler/bin/Release/ICompare.UI.Wpf.Module.Scheduler.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.UI.Wpf.Module.DataExport' Guid='{B4D4BDA5-A749-4EDF-AFE9-50E7D94721A3}'>
+        <File Id='ICompare.UI.Wpf.Module.DataExport' Name='ICompare.UI.Wpf.Module.DataExport.dll' DiskId='1' Source='../../ICompare/UI/Module/ICompare.UI.Wpf.Module.DataExport/bin/Release/ICompare.UI.Wpf.Module.DataExport.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='ICompare.UI.Wpf.Module.ScheduleControl' Guid='{5B28D387-8CA2-4C97-ACD0-E9BEABAFBB85}'>
+        <File Id='ICompare.UI.Wpf.Module.ScheduleControl' Name='ICompare.UI.Wpf.Module.ScheduleControl.dll' DiskId='1' Source='../../ICompare/UI/Component/ICompare.UI.Wpf.Module.ScheduleControl/bin/Release/ICompare.UI.Wpf.Module.ScheduleControl.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.UI.Wpf.Module.XmlViewer' Guid='{D45C388D-2A03-47A8-A884-73C56CC2D365}'>
+        <File Id='ICompare.UI.Wpf.Module.XmlViewer' Name='ICompare.UI.Wpf.Module.XmlViewer.dll' DiskId='1' Source='../../ICompare/UI/Module/ICompare.UI.Wpf.Module.XmlViewer/bin/Release/ICompare.UI.Wpf.Module.XmlViewer.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.Business.RemoteDataServices' Guid='{1DB8113D-A23D-4D3F-AC7F-A2B800F408E8}'>
+        <File Id='ICompare.Business.RemoteDataServices' Name='ICompare.Business.RemoteDataServices.dll' DiskId='1' Source='../../ICompare/Business/ICompare.Business.RemoteDataServices/bin/Release/ICompare.Business.RemoteDataServices.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='ICompare.UI.Wpf.Module.DynamicDataImporter' Guid='{4F942230-D47F-4507-916F-CEFCF1F47F71}'>
+        <File Id='ICompare.UI.Wpf.Module.DynamicDataImporter' Name='ICompare.UI.Wpf.Module.DynamicDataImporter.dll' DiskId='1' Source='../../ICompare/UI/Module/ICompare.UI.Wpf.Module.DynamicDataImporter/bin/Release/ICompare.UI.Wpf.Module.DynamicDataImporter.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='ICompare.UI.Wpf.Module.ManualRecon2' Guid='{11651EA6-21EF-44E4-96A2-C4DAB462FA1B}'>
+        <File Id='ICompare.UI.Wpf.Module.ManualRecon2' Name='ICompare.UI.Wpf.Module.ManualRecon2.dll' DiskId='1' Source='../../ICompare/UI/Module/ICompare.UI.Wpf.Module.ManualRecon2/bin/Release/ICompare.UI.Wpf.Module.ManualRecon2.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICFluid.Business.Data' Guid='{695C97AB-4A92-401C-8FD5-861C6AB63593}'>
+        <File Id='ICFluid.Business.Data' Name='Fluid.Business.Data.dll' DiskId='1' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Fluid.Business.Data.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='ICompare.UI.Wpf.Module.AllocationLookup' Guid='{8813C06F-E569-4059-8527-058B7D2C11FD}'>
+        <File Id='ICompare.UI.Wpf.Module.AllocationLookup' Name='ICompare.UI.Wpf.Module.AllocationLookup.dll' DiskId='1' Source='../../ICompare/UI/Module/ICompare.UI.Wpf.Module.AllocationLookup/bin/Release/ICompare.UI.Wpf.Module.AllocationLookup.dll' KeyPath='yes' />
+      </Component>
+		<Component Id='ICompare.Data.Specialized' Guid='{EF2A5F9F-FA66-4D45-B66D-28ED9127B9E5}'>
+			<File Id='ICompare.Data.Specialized' Name='ICompare.Data.Specialized.dll' DiskId='1' Source='../../ICompare/Data/ICompare.Data.Specialized/bin/Release/ICompare.Data.Specialized.dll' KeyPath='yes' />
+		</Component>
+		<!--<Component Id='ICompare.UI.Wpf.Module.MenuControl' Guid='{81E33E40-BA26-4A3B-AE16-AF266606CB34}'>
+			<File Id='ICompare.UI.Wpf.Module.MenuControl' Name='ICompare.UI.Wpf.Module.MenuControl.dll' DiskId='1' Source='../../ICompareV7/ICompare/UI/Module/ICompare.UI.Wpf.Module.MenuControl/bin/Release/ICompare.UI.Wpf.Module.MenuControl.dll' KeyPath='yes' />
+		</Component>-->
+      
+      <!--END ICOMPARE DISK1 -->
+
+      <!-- ICOMPARE LIB DISK2 -->
+
+      <Component Id='FusionXC.Business' Guid='48E6EA90-488D-49E2-B3B7-A765749C8333'>
+        <File Id='FusionXC.Business' Name='FusionXC.Business.dll' DiskId='2' Source='../../Lib/FusionXC.Business.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='FusionXC.Business.ProcessFlowServer' Guid='5620EEDF-BFB8-4F89-B64A-9E051CCCC006'>
+        <File Id='FusionXC.Business.ProcessFlowServer' Name='FusionXC.Business.ProcessFlowServer.dll' DiskId='2' Source='../../Lib/FusionXC.Business.ProcessFlowServer.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='FusionXC.Data' Guid='E3779AD3-BC4D-4018-9D8F-8B8789BD07BC'>
+        <File Id='FusionXC.Data' Name='FusionXC.Data.dll' DiskId='2' Source='../../Lib/FusionXC.Data.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='FusionXC.Data.ApplicationServices' Guid='2A7F4155-1E5A-4B17-8FD3-001076E4DC1B'>
+        <File Id='FusionXC.Data.ApplicationServices' Name='FusionXC.Data.ApplicationServices.dll' DiskId='2' Source='../../Lib/FusionXC.Data.ApplicationServices.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='FusionXC.Data.Model' Guid='3EE7B861-6870-468F-B3A7-33B6E3E8CD9D'>
+        <File Id='FusionXC.Data.Model' Name='FusionXC.Data.Model.dll' DiskId='2' Source='../../Lib/FusionXC.Data.Model.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='FusionXC.Data.ProcessFlow' Guid='987B8E9E-7E14-4E1A-9AEF-9E839E68013E'>
+        <File Id='FusionXC.Data.ProcessFlow' Name='FusionXC.Data.ProcessFlow.dll' DiskId='2' Source='../../Lib/FusionXC.Data.ProcessFlow.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='FusionXC.Data.Security' Guid='2204ED72-CD50-4562-8BF1-04437E15188E'>
+        <File Id='FusionXC.Data.Security' Name='FusionXC.Data.Security.dll' DiskId='2' Source='../../Lib/FusionXC.Data.Security.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='FusionXC.Data.Specialized' Guid='78542E82-F642-449C-8F13-238E247BB834'>
+        <File Id='FusionXC.Data.Specialized' Name='FusionXC.Data.Specialized.dll' DiskId='2' Source='../../Lib/FusionXC.Data.Specialized.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='FusionXC.Data.Workflow' Guid='2865411C-3163-43AC-8076-BFCD11ED9AE8'>
+        <File Id='FusionXC.Data.Workflow' Name='FusionXC.Data.Workflow.dll' DiskId='2' Source='../../Lib/FusionXC.Data.Workflow.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='FusionXC.UI.Wpf' Guid='7C77CD89-3D36-4F78-BE09-E8FE6DDB4D82'>
+        <File Id='FusionXC.UI.Wpf' Name='FusionXC.UI.Wpf.dll' DiskId='2' Source='../../Lib/FusionXC.UI.Wpf.dll' KeyPath='yes' />
+      </Component>
+      <!--<Component Id='FusionXC.UI.Wpf.Module.ApplicationActivityControl' Guid='4C68DD29-DB23-461F-820A-393CAFECEF04'>
+        <File Id='FusionXC.UI.Wpf.Module.ApplicationActivityControl' Name='FusionXC.UI.Wpf.Module.ApplicationActivityControl.dll' DiskId='2' Source='../../Lib/FusionXC.UI.Wpf.Module.ApplicationActivityControl.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='FusionXC.UI.Wpf.Module.AppSetupManager' Guid='0F23B092-F151-40A2-BFC4-3457C64091A6'>
+        <File Id='FusionXC.UI.Wpf.Module.AppSetupManager' Name='FusionXC.UI.Wpf.Module.AppSetupManager.dll' DiskId='2' Source='../../Lib/FusionXC.UI.Wpf.Module.AppSetupManager.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='FusionXC.UI.Wpf.Module.AppVersionManager' Guid='64D26C97-6A3D-49DA-A7EA-CE603B9DA1CB'>
+        <File Id='FusionXC.UI.Wpf.Module.AppVersionManager' Name='FusionXC.UI.Wpf.Module.AppVersionManager.dll' DiskId='2' Source='../../Lib/FusionXC.UI.Wpf.Module.AppVersionManager.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='FusionXC.UI.Wpf.Module.ModuleManager' Guid='7B5DFD98-8CAB-4B82-998D-3B596079D4CD'>
+        <File Id='FusionXC.UI.Wpf.Module.ModuleManager' Name='FusionXC.UI.Wpf.Module.ModuleManager.dll' DiskId='2' Source='../../Lib/FusionXC.UI.Wpf.Module.ModuleManager.dll' KeyPath='yes' />
+      </Component>
+      <Component Id='FusionXC.UI.Wpf.Module.StatusbarControl' Guid='24B46434-25CE-4C1F-8678-539B18BA257B'>
+        <File Id='FusionXC.UI.Wpf.Module.StatusbarControl' Name='FusionXC.UI.Wpf.Module.StatusbarControl.dll' DiskId='2' Source='../../Lib/FusionXC.UI.Wpf.Module.StatusbarControl.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='FusionXC.UI.Wpf.Module.SystemMessageControl' Guid='F42F464F-A0C3-4BFA-B0FD-5145F4B28D48'>
+        <File Id='FusionXC.UI.Wpf.Module.SystemMessageControl' Name='FusionXC.UI.Wpf.Module.SystemMessageControl.dll' DiskId='2' Source='../../Lib/FusionXC.UI.Wpf.Module.SystemMessageControl.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='FusionXC.UI.Wpf.Module.ToolbarNavigatorControl' Guid='A08C2264-1645-4E89-B726-96D97C183BA1'>
+        <File Id='FusionXC.UI.Wpf.Module.ToolbarNavigatorControl' Name='FusionXC.UI.Wpf.Module.ToolbarNavigatorControl.dll' DiskId='2' Source='../../Lib/FusionXC.UI.Wpf.Module.ToolbarNavigatorControl.dll' KeyPath='yes' />
+      </Component>-->
+      <!--<Component Id='FusionXC.UI.Wpf.Resources' Guid='14AD3256-0EFB-4FC2-BE23-D07B3BF76920'>
+        <File Id='FusionXC.UI.Wpf.Resources' Name='FusionXC.UI.Wpf.Resources.dll' DiskId='2' Source='../../Lib/FusionXC.UI.Wpf.Resources.dll' KeyPath='yes' />
+      </Component>-->
+      <Component Id='FusionXC.Data.Serialize' Guid='{C710A9DB-7E08-4147-991A-E838332A2F09}'>
+        <File Id='FusionXC.Data.Serialize' Name='FusionXC.Data.Serialize.dll' DiskId='2' Source='../../Lib/FusionXC.Data.Serialize.dll' KeyPath='yes' />
+      </Component>
+      <!--END ICOMPARE LIB-->
+
+     
+
+    </ComponentGroup>
+
+    <Feature Id='Complete' Level='1'>
+      <ComponentRef Id='MainExecutable' />
+      <ComponentRef Id='ICompare.UI.Wpf.Shell' />
+      <ComponentRef Id="ApplicationShortcut" />
+    </Feature>
+
+    <Icon Id="ICompareIcon" SourceFile="../../ICompare/UI/ICompare.UI.Wpf.Shell/bin/Release/ICompare.UI.Wpf.Shell.exe" />
+
+  </Fragment>
+</Wix>

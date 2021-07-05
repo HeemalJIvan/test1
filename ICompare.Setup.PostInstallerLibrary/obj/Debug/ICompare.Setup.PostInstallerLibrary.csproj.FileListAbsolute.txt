@@ -1,0 +1,6 @@
+C:\Users\user-pc\Desktop\Setup\ICompare.Setup.PostInstallerLibrary\bin\Debug\ICompare.Setup.PostInstallerLibrary.dll
+C:\Users\user-pc\Desktop\Setup\ICompare.Setup.PostInstallerLibrary\bin\Debug\ICompare.Setup.PostInstallerLibrary.pdb
+C:\Users\user-pc\Desktop\Setup\ICompare.Setup.PostInstallerLibrary\obj\Debug\ICompare.Setup.PostInstallerLibrary.csprojAssemblyReference.cache
+C:\Users\user-pc\Desktop\Setup\ICompare.Setup.PostInstallerLibrary\obj\Debug\ICompare.Setup.PostInstallerLibrary.csproj.CoreCompileInputs.cache
+C:\Users\user-pc\Desktop\Setup\ICompare.Setup.PostInstallerLibrary\obj\Debug\ICompare.Setup.PostInstallerLibrary.dll
+C:\Users\user-pc\Desktop\Setup\ICompare.Setup.PostInstallerLibrary\obj\Debug\ICompare.Setup.PostInstallerLibrary.pdb

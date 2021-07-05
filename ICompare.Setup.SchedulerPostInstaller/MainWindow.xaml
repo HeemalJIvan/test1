@@ -1,0 +1,62 @@
+﻿<Window x:Class="Fluid.Setup.PostInstaller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fluid.Setup.PostInstaller"
+        mc:Ignorable="d"
+        Title="Scheduler Console Setup" Height="350" Width="800" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+
+            <GroupBox Header="Scheduler Console">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Master Database Connection String:" Name="lblMasterTextblock" Margin="5" Width="220" />
+                        <TextBox Text="Initial Catalog=ICompare_Master;Integrated Security=True;" Name="txtConnectionString" Width="500" Margin="5" />
+                        <Button Click="Button_Click_1" Content="..." Margin="5" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <!--<TextBlock Text="Process Path:" Margin="5" Width="{Binding Path=Width, ElementName=lblMasterTextblock}" />
+                        <TextBox Text="D:\Synapse\Databases" Name="txtSupernovaPath" Width="{Binding Path=Width, ElementName=txtConnectionString}" Margin="5" IsReadOnly="True" />
+                        <Button Name="btnSupernovaPath" Click="btnSupernovaPath_Click" Content="..." Margin="5" />-->
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <!--<Button Content="Advanced >>" Name="btnAdvanced" Click="btnAdvanced_Click" HorizontalAlignment="Left" Margin="10" Padding="2"/>-->
+
+            <GroupBox Header="Fluid" Name="FluidGroupBox" Visibility="Collapsed">
+                <StackPanel>
+
+                    <!--<StackPanel Orientation="Horizontal">
+                        <TextBlock Text="SuperNova DB Location:" Margin="5" Width="{Binding Path=Width, ElementName=lblMasterTextblock}" />
+                        <TextBox Text="D:\Synapse\Databases" Name="txtSupernovaPath" Width="{Binding Path=Width, ElementName=txtConnectionString}" Margin="5" IsReadOnly="True" />
+                        <Button Name="btnSupernovaPath" Click="btnSupernovaPath_Click" Content="..." Margin="5" />
+                    </StackPanel>-->
+
+                    <!--<StackPanel Orientation="Horizontal">
+                        <TextBlock Text="SuperNova Script Path:" Margin="5" Width="{Binding Path=Width, ElementName=lblMasterTextblock}" />
+                        <TextBox Text="" Name="txtSupernovaScriptLocation" Width="200" Margin="5" />
+                        <Button Name="btnSupernovaScriptLocation" Click="btnSupernovaScriptLocation_Click" Content="..." Margin="5" />
+                    </StackPanel>-->
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="SuperNova DB Name:" Margin="5" Width="{Binding Path=Width, ElementName=lblMasterTextblock}" />
+                        <TextBox Text="Signature" Name="txtSupernovaName" Width="{Binding Path=Width, ElementName=txtConnectionString}" Margin="5" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="SuperNova Page Size:" Margin="5" Width="{Binding Path=Width, ElementName=lblMasterTextblock}" />
+                        <TextBox Text="1000" Name="txtSupernovaPS" Width="{Binding Path=Width, ElementName=txtConnectionString}" Margin="5" Padding="2" />
+                    </StackPanel>
+
+
+                </StackPanel>
+            </GroupBox>
+
+            <Button Content="Configure" Click="Button_Click" HorizontalAlignment="Left" Margin="10" Padding="3"/>
+        </StackPanel>
+    </Grid>
+</Window>

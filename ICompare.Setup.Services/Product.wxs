@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+
+  <?include $(var.ProjectDir)\Variables.wxi ?>
+
+  <Product Id="*" Name="$(var.PRODUCTTITLE)" Language="1033" Version="$(var.VERSION)" Manufacturer="Doorway" UpgradeCode="$(var.UPGRADECODEUID)">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <PropertyRef Id="WIX_IS_NETFRAMEWORK_46_OR_LATER_INSTALLED"/>
+    <Condition Message="This application requires .NET Framework 4.6.1. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR WIX_IS_NETFRAMEWORK_46_OR_LATER_INSTALLED]]>
+    </Condition>
+
+    <!--<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." AllowSameVersionUpgrades="yes" />-->
+    <MajorUpgrade AllowDowngrades="yes" />
+    <Media Id="1" Cabinet="services.cab" EmbedCab="yes" CompressionLevel="high" />
+    <Media Id="2" Cabinet="bin.cab" EmbedCab="yes" CompressionLevel="high" />
+    <Media Id="3" Cabinet="fluid.cab" EmbedCab="yes" CompressionLevel="high" />
+    <Media Id="4" Cabinet="fusion.cab" EmbedCab="yes" CompressionLevel="high" />
+    <Media Id="5" Cabinet="icompare.cab" EmbedCab="yes" CompressionLevel="high" />
+
+    <Feature Id="ProductFeature" Title="$(var.PRODUCTTITLE)" Level="1">
+      <!--<ComponentGroupRef Id="SchedulerProductComponents" />-->
+      <ComponentGroupRef Id="MatchingProductComponents" />
+      <ComponentGroupRef Id="ValidationProductComponents" />
+      <ComponentGroupRef Id="ImportProductComponents" />
+      <ComponentGroupRef Id="LibComponents" />
+      <ComponentGroupRef Id="FluidComponents" />
+      <ComponentGroupRef Id="FusionComponents" />
+      <ComponentGroupRef Id="ICompareComponents" />
+      <ComponentGroupRef Id="AllocationProductComponents" />
+      <ComponentGroupRef Id="ConsoleComponents"/>
+      <ComponentGroupRef Id="PostInstallerComponents"/>
+    </Feature>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="APPLICATIONFOLDER" />
+    <UIRef Id="MyUI" />
+
+    <Property Id="ARPPRODUCTICON" Value="iComparefinal.ico" />
+    <Icon Id="iComparefinal.ico" SourceFile="../../ICompare/UI/ICompare.UI.Wpf.Shell/iComparefinal.ico" />
+
+    <WixVariable Id="WixUIBannerBmp" Value="../../ICompare/UI/ICompare.UI.Wpf.Resources/Images/iCompareBanner.png" />
+    <WixVariable Id="WixUIDialogBmp" Value="../../ICompare/UI/ICompare.UI.Wpf.Resources/Images/iCompareUIBanner.png" />
+
+    <WixVariable Id="WixUILicenseRtf" Value="Licence.rtf" />
+
+    <Property Id="WixShellExecTarget" Value="[APPLICATIONFOLDER]ICompare.Setup.ServicesPostInstaller.exe" />
+    <CustomAction Id="LaunchApplication"
+        BinaryKey="WixCA"
+        DllEntry="WixShellExec"
+        Impersonate="yes" />
+
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="DOORWAY" Name="Doorway">
+        <Directory Id="APPLICATIONFOLDER" Name="$(var.PRODUCTTITLE)">
+          <Directory Id="LIBINSTALLFOLDER" Name="lib">
+            <Directory Id="BINFOLDER" Name="bin">
+              <!--<Component Id="BINFOLDERC" Guid="*">
+                <RemoveFolder Id="BINFOLDERD" On="uninstall" />
+              </Component>-->
+            </Directory>
+            
+            <Directory Id="DEVEXPRESSFOLDER" Name="devexpress"/>
+            <Directory Id="ICOMPAREINSTALLFOLDER" Name="icompare"/>
+            <Directory Id="FLUIDINSTALLFOLDER" Name="fluid"/>
+            <Directory Id="FUSIONINSTALLFOLDER" Name="fusion"/>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Property Id="ApplicationFolderName" Value="Doorway" />
+    <Property Id="WixAppFolder" Value="WixPerMachineFolder" />
+
+  </Fragment>
+
+</Wix>

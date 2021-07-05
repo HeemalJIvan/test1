@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="LibComponents" Directory="LIBINSTALLFOLDER">
+      <Component Id='Bytescout.PDFExtractor.dll' Guid='c637c757-cadf-468b-82d1-d4ebca5af436'>
+        <File Id='Bytescout.PDFExtractor.dll' Name='Bytescout.PDFExtractor.dll' DiskId='2' Source='../../Lib/Bytescout.PDFExtractor.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Bytescout.PDFExtractor.OCRExtension.dll' Guid='f004d233-b883-44e0-8e7e-bd4beb0615da'>
+        <File Id='Bytescout.PDFExtractor.OCRExtension.dll' Name='Bytescout.PDFExtractor.OCRExtension.dll' DiskId='2' Source='../../Lib/Bytescout.PDFExtractor.OCRExtension.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='EntityFramework.dll' Guid='74f5a464-5daa-4751-8c44-a523c8c3b298'>
+        <File Id='EntityFramework.dll' Name='EntityFramework.dll' DiskId='2' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release//EntityFramework.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ExcelDataReader.DataSet.dll' Guid='70b05992-ddd3-47df-8627-6dba1ca4bb45'>
+        <File Id='ExcelDataReader.DataSet.dll' Name='ExcelDataReader.DataSet.dll' DiskId='2' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release//ExcelDataReader.DataSet.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ExcelDataReader.dll' Guid='b4c39bfe-87a6-4577-a48c-e3cc63cf8cad'>
+        <File Id='ExcelDataReader.dll' Name='ExcelDataReader.dll' DiskId='2' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release//ExcelDataReader.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='IronPython.dll' Guid='86e0e88d-72e2-4a95-bf73-81674604e9e7'>
+        <File Id='IronPython.dll' Name='IronPython.dll' DiskId='2' Source='..\..\ICompare\Business\ICompare.Business.MatchingServer\bin\Release\IronPython.dll' KeyPath='yes' />
+      </Component>
+      
+      <Component Id='IronPython.Modules' Guid='{6869DFFE-88C9-4549-B349-E3F7CAD84F66}'>
+        <File Id='IronPython.Modules' Name='IronPython.Modules.dll' DiskId='2' Source='..\..\ICompare\Business\ICompare.Business.MatchingServer\bin\Release\IronPython.Modules.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='log4net' Guid='{7CCC1570-2980-4782-9D5A-E3108ACB7B5E}'>
+        <File Id='log4net' Name='log4net.dll' DiskId='2' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/log4net.dll' KeyPath='yes' />
+      </Component>
+      
+      <!--<Component Id='log4net.dll' Guid='16f69c07-9e24-4766-b98e-8f6d9b64af12'>
+        <File Id='log4net.dll' Name='log4net.dll' DiskId='2' Source='../../Lib/log4net.dll' KeyPath='yes' />
+      </Component>-->
+
+      <Component Id='Microsoft.CSharp.dll' Guid='6cd7c8dc-b30b-4fdc-80a7-644b375ca1be'>
+        <File Id='Microsoft.CSharp.dll' Name='Microsoft.CSharp.dll' DiskId='2' Source='../../Lib/Microsoft.CSharp.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Microsoft.Data.ConnectionUI.Dialog.dll' Guid='b8c66389-ecc6-4f9c-8fff-dcd9a707f551'>
+        <File Id='Microsoft.Data.ConnectionUI.Dialog.dll' Name='Microsoft.Data.ConnectionUI.Dialog.dll' DiskId='2' Source='../../Lib/Microsoft.Data.ConnectionUI.Dialog.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Microsoft.Data.ConnectionUI.dll' Guid='1f174861-2380-4e10-a34d-e6862947600e'>
+        <File Id='Microsoft.Data.ConnectionUI.dll' Name='Microsoft.Data.ConnectionUI.dll' DiskId='2' Source='../../Lib/Microsoft.Data.ConnectionUI.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Microsoft.Dynamic.dll' Guid='dc200d84-8871-4b57-b343-813584852b8c'>
+        <File Id='Microsoft.Dynamic.dll' Name='Microsoft.Dynamic.dll' DiskId='2' Source='..\..\ICompare\Business\ICompare.Business.MatchingServer\bin\Release\Microsoft.Dynamic.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Microsoft.Scripting.dll' Guid='a96b5a41-1efc-40d8-a53a-6dad12e4932e'>
+        <File Id='Microsoft.Scripting.dll' Name='Microsoft.Scripting.dll' DiskId='2' Source='..\..\ICompare\Business\ICompare.Business.MatchingServer\bin\Release\Microsoft.Scripting.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Microsoft.Scripting.Metadata.dll' Guid='7ec98ae2-92f1-4829-84af-aeb11fd1f615'>
+        <File Id='Microsoft.Scripting.Metadata.dll' Name='Microsoft.Scripting.Metadata.dll' DiskId='2' Source='..\..\ICompare\Business\ICompare.Business.MatchingServer\bin\Release\Microsoft.Scripting.Metadata.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='NCalc.dll' Guid='f75e3b2a-71ad-4981-9437-8dde79ae8a7a'>
+        <File Id='NCalc.dll' Name='NCalc.dll' DiskId='2' Source='../../ICompare/Test/ICompare.Test.AllocationEngineConsole/bin/Release/NCalc.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Newtonsoft.Json.dll' Guid='8988e9f9-fbba-402d-b348-5bcc2e17b26b'>
+        <File Id='Newtonsoft.Json.dll' Name='Newtonsoft.Json.dll' DiskId='2' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/Newtonsoft.Json.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Solar.Common.Transformers.ActivityTransformers.dll' Guid='7affb6b4-4161-4bb9-97a3-c67d6bab8f91'>
+        <File Id='Solar.Common.Transformers.ActivityTransformers.dll' Name='Solar.Common.Transformers.ActivityTransformers.dll' DiskId='2' Source='../../ICompare/Test/ICompare.Test.AllocationEngineConsole/bin/Release/Solar.Common.Transformers.ActivityTransformers.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Synapse.Business.Data.dll' Guid='4954dbf8-40bb-45ea-877a-9659bca89a87'>
+        <File Id='Synapse.Business.Data.dll' Name='Synapse.Business.Data.dll' DiskId='2' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release/Synapse.Business.Data.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Synapse.Business.dll' Guid='f1406f8e-f298-4141-9c6a-4460de013494'>
+        <File Id='Synapse.Business.dll' Name='Synapse.Business.dll' DiskId='2' Source='../../Fluid/Test/Fluid.Test.SchedulerConsole/bin/Release/Synapse.Business.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='UnidecodeSharpFork.dll' Guid='5d1da8fc-3477-4940-93e4-87d5e67611a0'>
+        <File Id='UnidecodeSharpFork.dll' Name='UnidecodeSharpFork.dll' DiskId='2' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/UnidecodeSharpFork.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='DevExpress.Docs.v19.1' Guid='{0B014EED-2153-4796-BEFF-142266C29CED}'>
+        <File Id='DevExpress.Docs.v19.1' Name='DevExpress.Docs.v19.1.dll' DiskId='3' Source='../../Fluid/UI/Fluid.UI.Shell/bin/Release/DevExpress.Docs.v19.1.dll' KeyPath='yes' />
+      </Component>
+
+      <!--DISK 3-->
+      
+      <Component Id='ICompareCore.Test.MatchingTestBench.exe' Guid='{012D2789-BE25-4F99-8F0D-02507EBB9107}'>
+        <File Id='ICompareCore.Test.MatchingTestBench.exe' Name='ICompareCore.Test.MatchingTestBench.exe' DiskId='3' Source='../../ICompareCore/Test/ICompareCore.Test.MatchingTestBench/bin/Release/ICompareCore.Test.MatchingTestBench.exe' KeyPath='yes' />
+      </Component>
+      <Component Id='ICompareCore.Test.MatchingTestBench.exe.config' Guid='{E8E9A245-8982-4472-BA8D-EDBE216C85B3}'>
+        <File Id='ICompareCore.Test.MatchingTestBench.exe.config' Name='ICompareCore.Test.MatchingTestBench.exe.config' DiskId='3' Source='../../ICompareCore/Test/ICompareCore.Test.MatchingTestBench/bin/Release/ICompareCore.Test.MatchingTestBench.exe.config' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompareCore.Business.Accounting.dll' Guid='86545CC8-590F-4C34-B28A-735563F58856'>
+        <File Id='ICompareCore.Business.Accounting.dll' Name='ICompareCore.Business.Accounting.dll' DiskId='2' Source='../../ICompareCore/Business/ICompareCore.Business.Accounting/bin/Release/ICompareCore.Business.Accounting.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='Continuum.Business.Data' Guid='{8888C1A2-A075-4AB8-9589-FCFB4E60C9DD}'>
+        <File Id='Continuum.Business.Data' Name='Continuum.Business.Data.dll' DiskId='2' Source='../../Lib/Continuum.Business.Data.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='Continuum.Business' Guid='{F5B4FE2F-5F17-408F-A734-4AD4E1380CF2}'>
+        <File Id='Continuum.Business' Name='Continuum.Business.dll' DiskId='2' Source='../../Lib/Continuum.Business.dll' KeyPath = 'yes' />
+      </Component>
+      <Component Id='Continuum.Business.Raptor' Guid='{EB7F9F67-B240-4C5A-9636-F4DBE522AA19}'>
+        <File Id='Continuum.Business.Raptor' Name='Continuum.Business.Raptor.dll' DiskId='2' Source='../../Lib/Continuum.Business.Raptor.dll' KeyPath = 'yes' />
+      </Component>
+
+      <Component Id='ICompareCore.Business.Servers.dll' Guid='{AF4AB641-7A53-4DCE-83B2-E6710380D5AA}'>
+        <File Id='ICompareCore.Business.Servers.dll' Name='ICompareCore.Business.Servers.dll' DiskId='2' Source='../../ICompareCore/Business/ICompareCore.Business.Servers/bin/Release/ICompareCore.Business.Servers.dll' KeyPath='yes' />
+      </Component>
+
+      <Component Id='ICompareCore.Business.dll' Guid='{32AA60AC-FB9A-49AB-96EB-AC4255290B04}'>
+        <File Id='ICompareCore.Business.dll' Name='ICompareCore.Business.dll' DiskId='2' Source='../../ICompareCore/Business/ICompareCore.Business/bin/Release/ICompareCore.Business.dll' KeyPath='yes' />
+      </Component>
+
+
+    </ComponentGroup>
+  </Fragment>
+</Wix>
