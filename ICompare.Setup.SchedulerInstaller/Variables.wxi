@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Include>
   <?define MAINEXE=$(var.Fluid.Business.TargetFileName)?>
   <!--<?define VERSION=!(bind.FileVersion.$(var.MAINEXE))?>-->
   <?define VERSION="4.0.8.11"?>
   <?define PRODUCT="Fluid Scheduler Service $(var.VERSION)"?>
   <?define SERVICENAME="fluid $(var.VERSION)"?>
-  <?define UPGRADECODEUID="{48737447-57B4-451F-8857-7091FE3B7C41}"?>
-  <?define SCHEDULERSERVICEUID="{81F53D55-E7BF-48C1-B965-B0A127FBBE15}"?>
+  <?define UPGRADECODEUID="{630BD822-5FB8-4262-B40C-936591F38238}"?>
+  <?define SCHEDULERSERVICEUID="{473A4695-C32F-4C25-836E-3220E0E21D63}"?>
 </Include>

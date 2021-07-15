@@ -1,5 +1,0 @@
-C:\Doorway\Setup\ICompare.Setup.SchedulerPostInstaller\obj\Debug\ICompare.Setup.SchedulerPostInstaller.csprojAssemblyReference.cache
-C:\Doorway\Setup\ICompare.Setup.SchedulerPostInstaller\obj\Debug\MainWindow.g.cs
-C:\Doorway\Setup\ICompare.Setup.SchedulerPostInstaller\obj\Debug\App.g.cs
-C:\Doorway\Setup\ICompare.Setup.SchedulerPostInstaller\obj\Debug\ICompare.Setup.SchedulerPostInstaller_MarkupCompile.cache
-C:\Doorway\Setup\ICompare.Setup.SchedulerPostInstaller\obj\Debug\ICompare.Setup.SchedulerPostInstaller_MarkupCompile.lref
