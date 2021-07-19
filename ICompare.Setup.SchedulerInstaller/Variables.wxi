@@ -2,7 +2,7 @@
 <Include>
   <?define MAINEXE=$(var.Fluid.Business.TargetFileName)?>
   <!--<?define VERSION=!(bind.FileVersion.$(var.MAINEXE))?>-->
-  <?define VERSION="4.0.8.11"?>
+  <?define VERSION="4.0.8.10"?>
   <?define PRODUCT="Fluid Scheduler Service $(var.VERSION)"?>
   <?define SERVICENAME="fluid $(var.VERSION)"?>
   <?define UPGRADECODEUID="{ED564D00-CF53-4112-8C0E-673222D5D18B}"?>
