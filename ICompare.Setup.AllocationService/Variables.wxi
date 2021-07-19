@@ -3,6 +3,6 @@
   <?define PRODUCT="iCompare Allocation Service"?>
   <?define MAINEXE="ICompare.Business.AllocationService"?>
   <?define VERSION=!(bind.FileVersion.$(var.MAINEXE))?>
-  <?define ALLOCATIONSERVICEUID="{2C924945-624E-4096-AB0C-F68CC51D360F}"?>
-  <?define UPGRADECODEUID="{37BAF479-581B-47AC-9152-96A330813F44}"?>
+  <?define ALLOCATIONSERVICEUID="{4E64B320-EB0C-4767-8325-C5DDB482548C}"?>
+  <?define UPGRADECODEUID="{FE3A6558-611F-4053-91D7-64DD3BC49CBB}"?>
 </Include>
