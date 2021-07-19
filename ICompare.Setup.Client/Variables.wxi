@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Include>
   <?define MAINEXE=$(var.ICompare.Business.MatchingService.TargetFileName)?>
   <!--<?define VERSION=!(bind.FileVersion.$(var.MAINEXE))?>-->
   <?define VERSION="4.0.8.11"?>
   <?define PRODUCT="ICompare $(var.VERSION)"?>
-  <?define UPGRADECODEUID="{6C984C89-2AFD-4B19-A2EA-2E52EC7BDC38}"?>
-  <?define SHORTCUTUID="{D57221E3-0BF0-461E-9B23-CF5D72435996}"?>
+  <?define UPGRADECODEUID="{E20E6A06-ADF1-414A-8B92-48DAFCB3E950}"?>
+  <?define SHORTCUTUID="{2D243B8C-86F4-458D-9682-18C220C1229F}"?>
 </Include>
